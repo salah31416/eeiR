@@ -11,4 +11,4 @@
 
 require(eeiR)
 
-a = eei(0, 79)
+a = eeic(0, 79)
