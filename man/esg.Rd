@@ -3,12 +3,18 @@
 \alias{esg}
 \title{Ecological Status Group}
 \usage{
-esg(a = 0, b = 0, c = 0, type = c("esgi","esgii"))
+esg(a = 0, b = 0, c = 0, k1 = 1, k2 = 0.8, k3 = 0.6, w1 = 0.8, w2 = 1, w3 = 1, type = c("esgi", "esgii"))
 }
 \arguments{
 	\item{a}{coefficients of the ESG}
 	\item{b}{coefficients of the ESG}
 	\item{c}{coefficients of the ESG}
+	\item{k1}{constant of the ESG}
+	\item{k2}{constant of the ESG}
+	\item{k3}{constant of the ESG}
+	\item{w1}{constant of the ESG}
+	\item{w2}{constant of the ESG}
+	\item{w3}{constant of the ESG}
 	\item{type}{predefined categories of ESG I and ESG II}
 }
 \description{
