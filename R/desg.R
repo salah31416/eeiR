@@ -37,9 +37,9 @@ desg = function(dt,
 	D2 = dcast(D1, func, value.var = "Total")
 
 	D3 = D2[, list(ESGI = esg(eval(ia), eval(ib), eval(ic), 
-						   type = "1"),
+						   type = "esg1"),
 				ESGII = esg(eval(iia), eval(iib), eval(iic), 
-							type = "2")),
+							type = "esg2")),
 				by = c(site, replica)]
 
 	D4 = D3[, eeic(ESGI, ESGII), by = c(site, replica)]
