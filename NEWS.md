@@ -1,3 +1,5 @@
-# eeiR 0.0.0.900
+# eeiR 0.0.0.930
+	change type esgi, esgii for esg1 and esg2
 
-First public release.
+# eeiR 0.0.0.900
+	First public release.
