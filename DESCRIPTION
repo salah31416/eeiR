@@ -1,7 +1,7 @@
 Package: eeiR
 Type: Package
 Title: Ecological Evaluation Index in R
-Version: 0.0.0.930
+Version: 0.0.0.940
 Author: 
 	Sousa-Filho <izi31416@protonmail.com>, 
 	Aline Queiroz <queirozsaq@gmail.com>
@@ -12,6 +12,6 @@ Depends: R (>= 3.5)
 LazyLoad: true
 LazyData: true
 Imports: data.table
-Date: 2019-05-05
+Date: 2019-05-06
 NeedsCompilation: no
-Packaged: 2019-05-06 02:16:04.037 UTC; izi
+Packaged: 2019-05-06 19:10:03.737 UTC; izi
