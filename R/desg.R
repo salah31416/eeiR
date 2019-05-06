@@ -45,7 +45,7 @@ desg = function(dt,
 	D4 = D3[, eeic(ESGI, ESGII), by = c(site, replica)]
 
 	D5 = D4[, list(EEIc = mean(EEIc), EEIeqr = mean(EEIeqr)), 
-			by = site][, list(Classes = classes(EEIeqr)), 
+			by = site][, list(ESC = esc(EEIeqr)), 
 			by = c(site, "EEIc", "EEIeqr")]
 
 	return(list("coverage"=D2, "esg"=D3, "eei"=D4, "media"=D5))

@@ -17,11 +17,11 @@ eeic = function(x, y,
 
 	eqr[eqr > 1] <- 1
 
-	cl = classes(eqr)
+	cl = esc(eqr)
 
 	eeic = 2 + 8*(eqr)
 
-	return(list("EEIeqr"=eqr, "EEIc"=eeic, "classe"=cl))
+	return(list("EEIeqr"=eqr, "EEIc"=eeic, "ESC"=cl))
 
 }#end hyp_model
 

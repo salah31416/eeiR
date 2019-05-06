@@ -12,6 +12,6 @@ Depends: R (>= 3.5)
 LazyLoad: true
 LazyData: true
 Imports: data.table
-Date: 2019-05-04
+Date: 2019-05-05
 NeedsCompilation: no
-Packaged: 2019-05-04 17:55:22.169 UTC; izi
+Packaged: 2019-05-06 02:16:04.037 UTC; izi
