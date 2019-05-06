@@ -2,7 +2,7 @@
 
 ## ,Ecological Evaluation Index
 export(eeic)
-export(classes)
+export(esc)
 export(eqr)
 export(esg)
 export(desg)

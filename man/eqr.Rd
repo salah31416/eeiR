@@ -3,10 +3,10 @@
 \alias{eqr}
 \title{Ecological Quality Ratios}
 \usage{
-eqr(eeic, rc = 10)
+eqr(x, rc = 10)
 }
 \arguments{
-	\item{eeic}{EEIc values}
+	\item{x}{EEIc values}
 	\item{rc}{constant}
 }
 \description{

@@ -1,3 +1,4 @@
+
 # eeiR 
 
 # Installation
@@ -12,24 +13,24 @@
 	esg2 = c(27.21, 73.97, 7.06, 75.79, 22.87, 22.43, 76.39, 66.6, 68.89)
 	eei.eqr = c(.25, .08, .76, .69, .87, .73, 0, 0, 0, .06, .35)
 
-## Classes
+## Ecological Status Class - ESC
 
-	classes(c(.8, .5))
-	classes(eei.eqr)
+	esc(c(.8, .5))
+	esc(eei.eqr)
 
-## EEI-c
+## Ecological Evaluation Index - EEI-c
 
 	eeic(esg1, esg2)
 	eeic(82, 18)
 
-## EQR
+## Ecological Quality Ratio - EQR
 
 	eqr(2.35173)
 
-## ESG
+## Ecological Status Group - ESG
 
-	esg(0, 25, 18, type="esg1")
-	esg(2.2, 69.85, type="esg2")
+	esg(0, 25, 18, type = "esg1")
+	esg(2.2, 69.85, type = "esg2")
 
 ## Data ESG
 
@@ -41,3 +42,4 @@
 	DD$esg
 	DD$eei
 	DD$media	
+

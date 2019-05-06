@@ -7,20 +7,20 @@
 ## 0.6-0.8 = good
 ## 0.8-1.0 = high
 ##-------------------------------------------------------------
-classes = function(eqr)
+esc = function(x)
 {
-	.classes = function(ic)
+	.esc = function(ic)
 	{
-		if(ic < .2) cl = "bad"
-		if(ic >= .2 & ic < .4) cl = "poor"
-		if(ic >= .4 & ic < .6) cl = "moderate"
-		if(ic >= .6 & ic < .8) cl = "good"
-		if(ic >= .8) cl = "high"
+		if(ic <= .2) cl = "bad"
+		if(ic > .2 & ic <= .4) cl = "poor"
+		if(ic > .4 & ic <= .6) cl = "moderate"
+		if(ic > .6 & ic <= .8) cl = "good"
+		if(ic > .8) cl = "high"
 
 		return(cl)
-	}#end .classes
+	}#end .esc
 
-	cl = sapply(eqr, .classes)
+	cl = sapply(x, .esc)
 
 	return(cl)
-}#end classes
+}#end esc
