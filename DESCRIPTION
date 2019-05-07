@@ -6,12 +6,25 @@ Author:
 	Sousa-Filho <izi31416@protonmail.com>, 
 	Aline Queiroz <queirozsaq@gmail.com>
 Maintainer: Sousa-Filho <izi31416@protonmail.com>
-Description: A biotic index for the implementation of WFD in rocky coastal and sedimentary transitional Mediterranean waters developed by Dr. Sotiris Orfanidis. The concept of the EEI is based on the obvious and universal pattern that "anthropogenic disturbance, e.g. pollution-eutrophication, shifts the ecosystem from pristine where late-successional species is dominant to degraded state, where opportunistic species is dominant". Marine benthic macrophytes (seaweeds, angiosperms) were used as bio-indicators of ecosystem shifts, from the pristine state with late-successional species (Ecological State Group I) to the degraded state with opportunistic species (ESG II). In moderately impacted coasts slow growing, shade-adapted calcareous species (ESG IC) and opportunistic macroalgae often co-dominate. 
+Description: A biotic index for the implementation of WFD in rocky coastal 
+	and sedimentary transitional Mediterranean waters developed by 
+	Dr. Sotiris Orfanidis. The concept of the EEI is based on the obvious
+	and universal pattern that "anthropogenic disturbance, e.g. 
+	pollution-eutrophication, shifts the ecosystem from pristine where 
+	late-successional species is dominant to degraded state, where 
+	opportunistic species is dominant". Marine benthic macrophytes 
+	(seaweeds, angiosperms) were used as bio-indicators of ecosystem 
+	shifts, from the pristine state with late-successional species 
+	(Ecological State Group I) to the degraded state with opportunistic 
+	species (ESG II). In moderately impacted coasts slow growing, 
+	shade-adapted calcareous species (ESG IC) and opportunistic macroalgae
+	often co-dominate. 
 License: GPL
 Depends: R (>= 3.5)
 LazyLoad: true
 LazyData: true
 Imports: data.table
-Date: 2019-05-06
 NeedsCompilation: no
-Packaged: 2019-05-06 19:10:03.737 UTC; izi
+BugReports: https://github.com/salah31416/eeiR/issues
+Date: 2019-05-06
+Packaged: 2019-05-07 02:27:08.900 UTC; izi
