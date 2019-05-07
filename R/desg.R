@@ -13,11 +13,10 @@ desg = function(dt,
 				site = NULL,
 				replica = NULL)
 {
-	ESGI=ESGII=EEIc=EEIeqr=NULL
+	ESGI=ESGII=EEI=EQR=NULL
 
 	EE = copy(dt)
-	#cove = substitute(cove)
-	#group = substitute(group)
+
 	cove = parse(text=cove)
 
 	ia = substitute(ia)
@@ -36,18 +35,19 @@ desg = function(dt,
 	
 	D2 = dcast(D1, func, value.var = "Total")
 
-	D3 = D2[, list(ESGI = esg(eval(ia), eval(ib), eval(ic), 
-						   type = "esg1"),
-				ESGII = esg(eval(iia), eval(iib), eval(iic), 
-							type = "esg2")),
+	D3 = D2[, list(
+				   ESGI = esg(eval(ia), eval(ib), eval(ic), type = "esg1"),
+				   ESGII = esg(eval(iia), eval(iib), eval(iic), type = "esg2")),
 				by = c(site, replica)]
 
-	D4 = D3[, eeic(ESGI, ESGII), by = c(site, replica)]
+	D4 = D3[, list(
+				   EEI = eeic(ESGI, ESGII)$EEI,
+				   EQR = eeic(ESGI, ESGII)$EQR),
+				by = c(site, replica)]
 
-	D5 = D4[, list(EEIc = mean(EEIc), EEIeqr = mean(EEIeqr)), 
-			by = site][, list(ESC = esc(EEIeqr)), 
-			by = c(site, "EEIc", "EEIeqr")]
+	D5 = D4[, list(EEI = mean(EEI), EQR = mean(EQR)), by = site][,
+					list(ESC = esc(EQR)), by = c(site, "EEI", "EQR")]
 
-	return(list("coverage"=D2, "esg"=D3, "eei"=D4, "media"=D5))
+	return(list("coverage" = D2, "esg" = D3, "eei" = D4, "average" = D5))
 
 }#end desg
