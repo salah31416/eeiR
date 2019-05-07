@@ -65,7 +65,7 @@ DD = desg(EEImelt, cove="Coverage", group="Group",
 DD$coverage
 DD$esg
 DD$eei
-DD$med
+DD$average
 ```
 ## Graphics
 
