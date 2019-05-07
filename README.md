@@ -10,6 +10,7 @@
 * [Ecological Quality Ratio - EQR](#ecological-quality-ratio)
 * [Ecological Status Group - ESG](#ecological-status-group)
 * [Data ESG](#data-esg)
+* [Graphics](#graphics)
 
 
 # Installation
