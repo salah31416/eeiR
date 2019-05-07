@@ -1,45 +1,70 @@
 
 # eeiR 
 
+## Contents
+
+* [Installation](#installation)
+* [Tests](#tests)
+* [Ecological Status Class - ESC](#ecological-status-class)
+* [Ecological Evaluation Index - EEI-c](#ecological-evaluation-index)
+* [Ecological Quality Ratio - EQR](#ecological-quality-ratio)
+* [Ecological Status Group - ESG](#ecological-status-group)
+* [Data ESG](#data-esg)
+
+
 # Installation
 
-	install.packages("devtools")
+```r
+install.packages("devtools")
 
-	devtools::install_github("salah31416/eeiR")
+devtools::install_github("salah31416/eeiR")
+```
 
 # Tests
 
-	esg1 = c(0, 0, 35, 156.67, 71.33, 56.88, 0, 0, 0, 13.58, 102.85)
-	esg2 = c(27.21, 73.97, 7.06, 75.79, 22.87, 22.43, 76.39, 66.6, 68.89)
-	eei.eqr = c(.25, .08, .76, .69, .87, .73, 0, 0, 0, .06, .35)
+```r
+esg1 = c(0, 0, 35, 156.67, 71.33, 56.88, 0, 0, 0, 13.58, 102.85)
+esg2 = c(27.21, 73.97, 7.06, 75.79, 22.87, 22.43, 76.39, 66.6, 68.89)
+eq = c(.25, .08, .76, .69, .87, .73, 0, 0, 0, .06, .35)
+```
 
-## Ecological Status Class - ESC
+## Ecological Status Class
 
-	esc(c(.8, .5))
-	esc(eei.eqr)
+```r
+esc(c(.8, .5))
+esc(eq)
+```
 
-## Ecological Evaluation Index - EEI-c
+## Ecological Evaluation Index
 
-	eeic(esg1, esg2)
-	eeic(82, 18)
+```r
+eeic(esg1, esg2)
+eeic(82, 18)
+```
 
-## Ecological Quality Ratio - EQR
+## Ecological Quality Ratio
 
-	eqr(2.35173)
+```r
+eqr(2.35173)
+```
 
-## Ecological Status Group - ESG
+## Ecological Status Group
 
-	esg(0, 25, 18, type = "esg1")
-	esg(2.2, 69.85, type = "esg2")
+```r
+esg(0, 25, 18, type = "esg1")
+esg(2.2, 69.85, type = "esg2")
+```
 
 ## Data ESG
 
-	DD = desg(EEImelt, cove="Coverage", group="Group", 
+```r
+DD = desg(EEImelt, cove="Coverage", group="Group", 
 		  ia = IA, ib = IB, ic = IC, iia = IIA, iib = IIB,
 		  site = "Site", replica = "Replica")
 
-	DD$coverage
-	DD$esg
-	DD$eei
-	DD$media	
+DD$coverage
+DD$esg
+DD$eei
+DD$med
+```
 
