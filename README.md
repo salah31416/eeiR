@@ -72,5 +72,5 @@ DD$med
 <p align="center">
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/classes.png" alt="Classes" width="45%"/>
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/hyp.png" alt="Hyperbole" width="50%"/>
-<img src="https://github.com/salah31416/eeiR/raw/master/inst/hyp2.png" alt="Hyperbole 3D" width="50%"/>
+<img src="https://github.com/salah31416/eeiR/raw/master/inst/k2.png" alt="Hyperbole 3D" width="50%"/>
 </p>
