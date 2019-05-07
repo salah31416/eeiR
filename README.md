@@ -67,4 +67,4 @@ DD$esg
 DD$eei
 DD$med
 ```
-
+![alt text](https://github.com/salah31416/eeiR/raw/master/inst/classes.png)
