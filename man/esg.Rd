@@ -3,21 +3,16 @@
 \alias{esg}
 \title{Ecological Status Group}
 \usage{
-esg(a = 0, b = 0, c = 0, k1 = 1, k2 = 0.8, k3 = 0.6, w1 = 0.8, w2 = 1, w3 = 1,
-	type = c("esg1", "esg2"))
+esg(x = 0, y = 0, z = 0, k = NULL, type = c("esg1", "esg2"))
 }
 \arguments{
-	\item{a}{coefficients of the ESG}
-	\item{b}{coefficients of the ESG}
-	\item{c}{coefficients of the ESG}
-	\item{k1}{constant of the ESG}
-	\item{k2}{constant of the ESG}
-	\item{k3}{constant of the ESG}
-	\item{w1}{constant of the ESG}
-	\item{w2}{constant of the ESG}
-	\item{w3}{constant of the ESG}
+	\item{x}{coefficients of the ESG}
+	\item{y}{coefficients of the ESG}
+	\item{z}{coefficients of the ESG}
+	\item{k}{constant of the ESG. For "esg1" k = c(1, 0.8, 1) 
+		and "esg2" k = c(0.8, 1, 1)}
 	\item{type}{predefined categories of ESG I and ESG II}
 }
 \description{
-the late-successional group with low growth rates and long life histories (Ecological Status Group I, mostly K-selection) and the opportunistic group with high growth rates and short life histories (ESG II, mostly r-selection).
+The late-successional group with low growth rates and long life histories (Ecological Status Group I, mostly K-selection) and the opportunistic group with high growth rates and short life histories (ESG II, mostly r-selection).
 }

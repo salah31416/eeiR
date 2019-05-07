@@ -9,10 +9,5 @@ esc(x)
 	\item{x}{EQR values}
 }
 \description{
-	Ecological Status Classes
-		0-0.2 = bad; 
-		0.2-0.4 = poor; 
-		0.4-0.6 = moderate; 
-		0.6-0.8 = good;
-		0.8-1.0 = high
+	Ecological Status Classes 0-2 = bad; 2-4 = poor; 4-6 = moderate; 6-8 = good; 8-10 = high.
 }

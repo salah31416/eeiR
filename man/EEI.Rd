@@ -4,7 +4,7 @@
 \name{EEI}
 \alias{EEI}
 \title{Data for Ecological Evaluation Index}
-\format{Dados para uso
+\format{Use data
 	\describe{
 		\item{specie}{species}
 		\item{Group}{group}
