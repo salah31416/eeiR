@@ -67,7 +67,10 @@ DD$esg
 DD$eei
 DD$med
 ```
+## Graphics
 
+<p align="center">
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/classes.png" alt="Classes" width="500"/>
-
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/hyp.png" alt="Hyperbole" width="600"/>
+</p>
+
