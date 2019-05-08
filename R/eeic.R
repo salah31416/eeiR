@@ -11,7 +11,7 @@ eeic = function(x, y, k = NULL)
     }#end if
 
     ## length
-    n = 1:length(x)
+    n = 1:max(length(x), length(y))
 
     ## percent
     x = x/100
