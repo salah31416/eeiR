@@ -1,6 +1,11 @@
 
 # eeiR 
 
+<p align="center">
+<img src="https://github.com/salah31416/eeiR/raw/master/inst/macro.png" 
+alt="Classes" width="45%"/>
+</p>
+
 ## Contents
 
 * [Installation](#installation)
