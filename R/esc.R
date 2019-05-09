@@ -11,11 +11,11 @@ esc = function(x)
 {
 	.esc = function(ic)
 	{
-		if(ic <= .2) cl = "bad"
-		if(ic > .2 & ic <= .4) cl = "poor"
-		if(ic > .4 & ic <= .6) cl = "moderate"
-		if(ic > .6 & ic <= .8) cl = "good"
-		if(ic > .8) cl = "high"
+		if(ic <= .2) cl = "Bad"
+		if(ic > .2 & ic <= .4) cl = "Poor"
+		if(ic > .4 & ic <= .6) cl = "Moderate"
+		if(ic > .6 & ic <= .8) cl = "Good"
+		if(ic > .8) cl = "High"
 
 		return(cl)
 	}#end .esc
