@@ -1,9 +1,9 @@
 
-# eeiR 
+# eeiR - Ecological Evaluation Index
 
 <p align="center">
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/macro.png" 
-alt="Classes" width="45%"/>
+alt="Classes" width="35%"/>
 </p>
 
 ## Contents
