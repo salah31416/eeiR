@@ -30,7 +30,7 @@ devtools::install_github("salah31416/eeiR")
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;ESG I (\% coverage) = (IA \cdot 1) + (IB \cdot 0.8) + (IC \cdot 0.6)" title="ESC" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;ESG I (\% coverage) = (IA \cdot 1) + (IB \cdot 0.8) + (IC \cdot 0.6)" title="\Large&space;ESG I (\% coverage) = (IA \cdot 1) + (IB \cdot 0.8) + (IC \cdot 0.6)" />
 
 $$ESG II (\% coverage) = (IIA \cdot 0.8) + (IIB \cdot 1) + (IIC \cdot 1)$$
 
