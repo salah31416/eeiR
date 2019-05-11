@@ -63,9 +63,9 @@ df = data.frame(ESGI = esg(ia, ib, ic, type = "esg1"), ESGII = esg(iia, iib, typ
 
 <img src="https://latex.codecogs.com/svg.latex?x%20=%20\frac{ESGI}{100};%20\quad%20y%20=%20\frac{ESGII}{100}" title="xy" \>
 
-<img src="https://latex.codecogs.com/svg.latex?p(x,y)%20=%20a%20+%20b\cdot%20x%20+%20c\cdot%20x^2%20+%20d\cdot%20y%20+%20e\cdot%20y^2%20+%20f\cdot%20x\cdot%20y" title="eqr" \>
+<img src="https://latex.codecogs.com/svg.latex?p(x,y)%20=%20a%20+%20b\cdot%20x%20+%20c\cdot%20x^2%20+%20d\cdot%20y%20+%20e\cdot%20y^2%20+%20f\cdot%20x\cdot%20y" title="eqr" />
 
-<img src="https://latex.codecogs.com/svg.latex?eei%20=%202%20+%208%20\cdot%20p(x,%20y)" title="eei" \>
+<img src="https://latex.codecogs.com/svg.latex?eei%20=%202%20+%208%20\cdot%20p(x,%20y)" title="eei" />
 
 where: x is the score in ESG I, y is the score in ESG II
 and a, b, c, d, e and f are the coefficients of the hyperbola.
