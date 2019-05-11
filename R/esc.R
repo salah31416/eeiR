@@ -4,11 +4,11 @@
 esc = function(x)
 {
 #	Classes defined for EEI
-#	eei <= 2	 = bad;
-#	2 < eei <= 4 = poor;
-#	4 < eei <= 6 = moderate;
-#	6 < eei <= 8 = good;
-#	eei > 8		 = high
+#	eei <= 2	 = Bad;
+#	2 < eei <= 4 = Poor;
+#	4 < eei <= 6 = Moderate;
+#	6 < eei <= 8 = Good;
+#	eei > 8		 = High
 
 	.esc = function(ic)
 	{
