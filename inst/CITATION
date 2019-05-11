@@ -7,4 +7,5 @@ bibentry(bibtype = "manual",
            as.person("Aline Queiroz"),
            as.person("Sotiris Orfanidis" )),
          year = year,
-         note = note)
+         note = note,
+		 url = "https://github.com/salah31416/eeiR")
