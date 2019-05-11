@@ -61,7 +61,7 @@ df = data.frame(ESGI = esg(ia, ib, ic, type = "esg1"), ESGII = esg(iia, iib, typ
 
 ## Ecological Evaluation Index
 
-<img src="https://latex.codecogs.com/svg.latex?x%20=%20\frac{ESGI}{100};%20\quad%20y%20=%20\frac{ESGII}{100}" title="xy" \>
+<img src="https://latex.codecogs.com/svg.latex?x%20=%20\frac{ESGI}{100};%20\quad%20y%20=%20\frac{ESGII}{100}" title="xy" />
 
 <img src="https://latex.codecogs.com/svg.latex?p(x,y)%20=%20a%20+%20b\cdot%20x%20+%20c\cdot%20x^2%20+%20d\cdot%20y%20+%20e\cdot%20y^2%20+%20f\cdot%20x\cdot%20y" title="eqr" />
 
@@ -92,9 +92,9 @@ eeic(esg1, esg2)
 
 ## Ecological Quality Ratio
 
-$$EQR =1.25\cdot (EEI_c/RC)-0.25$$
+<img src="https://latex.codecogs.com/svg.latex?EQR%20=1.25\cdot%20(EEI_c/RC)-0.25" title="eqr" />
 
-Where: $RC=10$
+Where: RC=10
 
 ```r
 eei = c(3.75766, 5.44791, 4.56655, 2.44498, 2, 3.04903, 4.91062, 5.63304, 4.80731, 8.00057, 8.505904, 8.32761)
