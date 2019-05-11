@@ -56,19 +56,22 @@ df = data.frame(ESGI = esg(ia, ib, ic, type = "esg1"), ESGII = esg(iia, iib, typ
 #10 62.06  30.30
 #11 73.20  31.48
 #12 74.80  34.95
-
 ```
 
 ## Ecological Evaluation Index
 
 <img src="https://latex.codecogs.com/svg.latex?x%20=%20\frac{ESGI}{100};%20\quad%20y%20=%20\frac{ESGII}{100}" title="xy" />
 
+
 <img src="https://latex.codecogs.com/svg.latex?p(x,y)%20=%20a%20+%20b\cdot%20x%20+%20c\cdot%20x^2%20+%20d\cdot%20y%20+%20e\cdot%20y^2%20+%20f\cdot%20x\cdot%20y" title="eqr" />
+
 
 <img src="https://latex.codecogs.com/svg.latex?eei%20=%202%20+%208%20\cdot%20p(x,%20y)" title="eei" />
 
+
 where: x is the score in ESG I, y is the score in ESG II
 and a, b, c, d, e and f are the coefficients of the hyperbola.
+
 
 ```r
 esg1 = c(30.8, 38.8, 22.6, 15.66, 12.66, 21.2, 34.03, 48.63, 31.03, 62.06, 73.2, 74.8)
@@ -228,3 +231,6 @@ DD$average
 <img src="https://github.com/salah31416/eeiR/blob/master/inst/figures/k2.png" alt="Hyperbole 3D" width="50%"/>
 </p>
 
+# References
+
+Orfanidis, S.; Dencheva, K.; Nakou, K.; Tsioli, S.; Papathanasiou, V.; Rosati, I. 2014. Benthic macrophyte metrics as bioindicators of water quality: towards overcoming typological boundaries and methodological tradition in Mediterranean and Black Seas. Hydrobiologia 740: 61–78.
