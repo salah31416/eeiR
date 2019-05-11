@@ -24,12 +24,17 @@ eeic = function(x, y, k = NULL)
 
     ## limit max value h=1
     h[h > 1] <- 1
+	h[h < 0] <- 0
 
     ## Ecological Status Classes
-    cl = esc(h)
+#    cl = esc(h)
 
     ## Ecological Evaluation Index
     ei = 2 + 8*(h)
+
+	## Ecological Status Classes
+    cl = esc(ei)
+
 
     ## data.table
     out = data.table("N" = n, "ESG1" = x*100, "ESG2" = y*100,

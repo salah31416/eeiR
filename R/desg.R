@@ -4,16 +4,16 @@
 desg = function(dt, 
 				cove, 
 				group, 
-				ia = NULL, 
-				ib = NULL, 
-				ic = NULL, 
-				iia = NULL,
-				iib = NULL,
-				iic = NULL,
+				ia = 0, 
+				ib = 0, 
+				ic = 0, 
+				iia = 0,
+				iib = 0,
+				iic = 0,
 				site = NULL,
 				replica = NULL)
 {
-	ESGI=ESGII=EEI=EQR=NULL
+	ESGI=ESGII=EEI=EQR=ESC=NULL
 
 	EE = copy(dt)
 
@@ -42,11 +42,11 @@ desg = function(dt,
 
 	D4 = D3[, list(
 				   EEI = eeic(ESGI, ESGII)$EEI,
-				   EQR = eeic(ESGI, ESGII)$EQR),
-				by = c(site, replica)]
+				   EQR = eeic(ESGI, ESGII)$EQR
+				   ), by = c(site, replica)][, ESC := esc(EEI)]
 
 	D5 = D4[, list(EEI = mean(EEI), EQR = mean(EQR)), by = site][,
-					list(ESC = esc(EQR)), by = c(site, "EEI", "EQR")]
+					list(ESC = esc(EEI)), by = c(site, "EEI", "EQR")]
 
 	return(list("coverage" = D2, "esg" = D3, "eei" = D4, "average" = D5))
 

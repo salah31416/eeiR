@@ -3,7 +3,7 @@
 \alias{desg}
 \title{Ecological Status Group}
 \usage{
-desg(dt, cove, group, ia = NULL, ib = NULL, ic = NULL, iia = NULL, iib = NULL, iic = NULL, site = NULL, replica = NULL)
+desg(dt, cove, group, ia = 0, ib = 0, ic = 0, iia = 0, iib = 0, iic = 0, site = NULL, replica = NULL)
 }
 \arguments{
 	\item{dt}{data.table}
