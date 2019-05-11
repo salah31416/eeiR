@@ -117,16 +117,7 @@ df = data.frame(EEI = eei, EQR = eqr(eei))
 
 ## Ecological Status Class
 
-\[
-ESC =
-\begin{cases}
-Bad  & \text{for } eei \leq 2 \\
-Poor & \text{for } 2 < eei \leq 4 \\
-Moderate & \text{for } 4 < eei \leq 6 \\
-Good & \text{for } 6 < eei \leq 8 \\
-High & \text{for } eei > 8
-\end{cases}
-\]
+<img src="https://latex.codecogs.com/svg.latex?ESC%20=\begin{cases}Bad%20%20&%20\text{for%20}%20eei%20\leq%202%20\\Poor%20&%20\text{for%20}%202%20%3C%20eei%20\leq%204%20\\Moderate%20&%20\text{for%20}%204%20%3C%20eei%20\leq%206%20\\Good%20&%20\text{for%20}%206%20%3C%20eei%20\leq%208%20\\High%20&%20\text{for%20}%20eei%20%3E%208\end{cases}" title="classes" />
 
 ```r
 ei = seq(0, 10, .5)
