@@ -31,6 +31,8 @@ devtools::install_github("salah31416/eeiR")
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;ESG%20I%20(\%%20coverage)%20=%20(IA%20\cdot%201)%20+%20(IB%20\cdot%200.8)%20+%20(IC%20\cdot%200.6)" title="ESGI" />
 
 <img src="https://latex.codecogs.com/svg.latex?ESG%20II%20(\%%20coverage)%20=%20(IIA%20\cdot%200.8)%20+%20(IIB%20\cdot%201)%20+%20(IIC%20\cdot%201)" title=ESG2 />
+
+
 ```r
 ## %Coverage ESG I
 ia = c(0, 10, 5, 0, 0, 0, 15, 25, 22, 43, 55, 65)
@@ -59,14 +61,14 @@ df = data.frame(ESGI = esg(ia, ib, ic, type = "esg1"), ESGII = esg(iia, iib, typ
 
 ## Ecological Evaluation Index
 
-$$x = \frac{ESGI}{100}; \quad y = \frac{ESGII}{100}$$
+<img src="https://latex.codecogs.com/svg.latex?x%20=%20\frac{ESGI}{100};%20\quad%20y%20=%20\frac{ESGII}{100}" title="xy" \>
 
-$$p(x,y) = a + b\cdot x + c\cdot x^2 + d\cdot y + e\cdot y^2 + f\cdot x\cdot y$$
+<img src="https://latex.codecogs.com/svg.latex?p(x,y)%20=%20a%20+%20b\cdot%20x%20+%20c\cdot%20x^2%20+%20d\cdot%20y%20+%20e\cdot%20y^2%20+%20f\cdot%20x\cdot%20y" title="eqr" \>
 
-$$eei = 2 + 8 \cdot p(x, y)$$
+<img src="https://latex.codecogs.com/svg.latex?eei%20=%202%20+%208%20\cdot%20p(x,%20y)" title="eei" \>
 
-where: $x$ is the score in ESG I, y is the score in ESG II
-and $a, b, c, d, e$ and $f$ are the coefficients of the hyperbola.
+where: x is the score in ESG I, y is the score in ESG II
+and a, b, c, d, e and f are the coefficients of the hyperbola.
 
 ```r
 esg1 = c(30.8, 38.8, 22.6, 15.66, 12.66, 21.2, 34.03, 48.63, 31.03, 62.06, 73.2, 74.8)
