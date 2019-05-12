@@ -233,10 +233,10 @@ DD$average
 
 # References
 
-Orfanidis, S.; Panayotidis, P.; Stamatis, N. 2003. An insight to the ecological evaluation index (EEI). Ecological Indicators 3: 27–33.
+Orfanidis, S., Panayotidis, P., & Stamatis, N. (2003). An insight to the ecological evaluation index (EEI). Ecological Indicators, 3(1), 27–33. doi:10.1016/s1470-160x(03)00008-6
 
-Orfanidis, S.; Pinna, M.; Sabetta, L.; Stamatis, N.; Nakou, K. 2008. Variation of structural and functional metrics in macrophyte communities within two habitats of eastern Mediterranean coastal lagoons: natural versus human effects. Aquatic Conservation: Marine and Freshwater Ecosystems 18: S45–S61.
+Orfanidis, S., Pinna, M., Sabetta, L., Stamatis, N., & Nakou, K. (2008). Variation of structural and functional metrics in macrophyte communities within two habitats of eastern Mediterranean coastal lagoons: natural versus human effects. Aquatic Conservation: Marine and Freshwater Ecosystems, 18(S1), S45–S61. doi:10.1002/aqc.957
 
-Orfanidis, S.; Panayotidis, P.; Ugland, K. 2011. Ecological Evaluation Index Continuous Formula (EEI-c) Application: A Step Forward For Functional Groups, The Formula And Reference Condition Values. Mediterranean Marine Science 12: 199.
+Orfanidis, S., Panayotidis, P., & Ugland, K. (2011). Ecological Evaluation Index Continuous Formula (EEI-c) Application: A Step Forward For Functional Groups, The Formula And Reference Condition Values. Mediterranean Marine Science, 12(1), 199. doi:10.12681/mms.60
 
-Orfanidis, S.; Dencheva, K.; Nakou, K.; Tsioli, S.; Papathanasiou, V.; Rosati, I. 2014. Benthic macrophyte metrics as bioindicators of water quality: towards overcoming typological boundaries and methodological tradition in Mediterranean and Black Seas. Hydrobiologia 740: 61–78.
+Orfanidis, S., Dencheva, K., Nakou, K., Tsioli, S., Papathanasiou, V., & Rosati, I. (2014). Benthic macrophyte metrics as bioindicators of water quality: towards overcoming typological boundaries and methodological tradition in Mediterranean and Black Seas. Hydrobiologia, 740(1), 61–78. doi:10.1007/s10750-014-1938-x
