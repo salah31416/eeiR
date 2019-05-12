@@ -63,16 +63,12 @@ df = data.frame(ESGI = esg(ia, ib, ic, type = "esg1"), ESGII = esg(iia, iib, typ
 
 <img src="https://latex.codecogs.com/svg.latex?x%20=%20\frac{ESGI}{100};%20\quad%20y%20=%20\frac{ESGII}{100}" title="xy" />
 
-
 <img src="https://latex.codecogs.com/svg.latex?p(x,y)%20=%20a%20+%20b\cdot%20x%20+%20c\cdot%20x^2%20+%20d\cdot%20y%20+%20e\cdot%20y^2%20+%20f\cdot%20x\cdot%20y" title="eqr" />
-
 
 <img src="https://latex.codecogs.com/svg.latex?eei%20=%202%20+%208%20\cdot%20p(x,%20y)" title="eei" />
 
-
-where: x is the score in ESG I, y is the score in ESG II
-and a, b, c, d, e and f are the coefficients of the hyperbola.
-
+where: *x* is the score in *ESG I*, *y* is the score in *ESG II*
+and *a*, *b*, *c*, *d*, *e* and *f* are the coefficients of the hyperbola.
 
 ```r
 esg1 = c(30.8, 38.8, 22.6, 15.66, 12.66, 21.2, 34.03, 48.63, 31.03, 62.06, 73.2, 74.8)
@@ -98,7 +94,7 @@ eeic(esg1, esg2)
 
 <img src="https://latex.codecogs.com/svg.latex?EQR%20=1.25\cdot%20(EEI_c/RC)-0.25" title="eqr" />
 
-Where: RC=10
+Where: *RC* = 10
 
 ```r
 eei = c(3.75766, 5.44791, 4.56655, 2.44498, 2, 3.04903, 4.91062, 5.63304, 4.80731, 8.00057, 8.505904, 8.32761)
@@ -149,8 +145,6 @@ df = data.frame(EEI = ei, ESC = esc(ei))
 #20  9.5     High
 #21 10.0     High
 ```
-
-
 
 ## Data ESG
 
