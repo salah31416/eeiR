@@ -12,15 +12,6 @@
 ##-------------------------------------------------------------
 ## 
 ##-------------------------------------------------------------
-.firstup = function(x)
-{
-  substr(x, 1, 1) <- toupper(substr(x, 1, 1))
-  x
-}#end function
-
-##-------------------------------------------------------------
-## 
-##-------------------------------------------------------------
 .genus = function(x) gsub(" .*", "", x) #end function
 
 ##-------------------------------------------------------------
@@ -29,13 +20,14 @@
 group_esg = function(file_dta,
 					 rows, 
 					 sheet,
-					 template = NULL, 
+					 class_esg = NULL, 
 					 xlsx = FALSE, 
 					 open.xlsx = FALSE, 
 					 out.dir = NULL)
 {
+	.=Algae=value=NULL
 
-	TEMP = data.table::fread(template)
+	TEMP = data.table::fread(class_esg)
 
 	DTA = openxlsx::read.xlsx(file_dta, sheet = sheet, rows=rows)
 
@@ -46,11 +38,11 @@ group_esg = function(file_dta,
 
 	nameDTA = names(DTA)[1]
 	nameDTA = parse(text=nameDTA)
-	DTA[, Algae := genus(eval(nameDTA))]
+	DTA[, Algae := .genus(eval(nameDTA))]
 
 	nameTEMP = names(TEMP)[1]
 	nameTEMP = parse(text=nameTEMP)
-	TEMP[, Algae := genus(eval(nameTEMP))]
+	TEMP[, Algae := .genus(eval(nameTEMP))]
 
 	OUT = TEMP[DTA, on="Algae"]
 	OUT[, Algae:=NULL][]
@@ -109,7 +101,7 @@ group_esg = function(file_dta,
 			nome_arq = file.path(out.dir, paste0(narq, "_", at, "_ESG", ".xlsx"))
 		}#end if
 		openxlsx::saveWorkbook(wb, nome_arq, overwrite = TRUE)
-		if(open.xlsx)browseURL(nome_arq)
+		if(open.xlsx)utils::browseURL(nome_arq)
 	}#end if
 	
 	return(list(OUT, OUTm))
