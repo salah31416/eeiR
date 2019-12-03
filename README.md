@@ -223,7 +223,7 @@ DD$average
 <p align="center">
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/classes.png" alt="Classes" width="45%"/>
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/hyp.png" alt="Hyperbole" width="50%"/>
-<img src="https://github.com/salah31416/eeiR/blob/master/inst/figures/k2.png" alt="Hyperbole 3D" width="50%"/>
+<img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/k2.png" alt="Hyperbole 3D" width="50%"/>
 </p>
 
 # References
