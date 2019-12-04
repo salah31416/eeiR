@@ -11,5 +11,5 @@ eeic(x, y, k = NULL)
 	\item{k}{vector with a,b,d,c,e and f coefficients of the hyperbola}
 }
 \description{
-	A biotic index for the implementation of WFD in rocky coastal and sedimentary.	
+	A biotic index implementation.	
 }

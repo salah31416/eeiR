@@ -3,20 +3,14 @@
 \alias{desg}
 \title{Ecological Status Group}
 \usage{
-desg(dt, cove, group, ia = 0, ib = 0, ic = 0, iia = 0, iib = 0, iic = 0, site = NULL, replica = NULL)
+desg(dta, coverage, group, site = NULL, loc = NULL)
 }
 \arguments{
-	\item{dt}{data.table}
-	\item{cove}{name coverage}
-	\item{group}{name group}
-	\item{ia}{group IA}
-	\item{ib}{group IB}
-	\item{ic}{group IC}
-	\item{iia}{group IIA}
-	\item{iib}{group IIB}
-	\item{iic}{group IIC}
-	\item{site}{local}
-	\item{replica}{replica}
+	\item{dta}{data.table}
+	\item{coverage}{name coverage}
+	\item{site}{name group}
+	\item{loc}{local}
+	\item{group}{group}
 }
 \description{
 The late-successional group with low growth rates and long life histories (Ecological Status Group I, mostly K-selection) and the opportunistic group with high growth rates and short life histories (ESG II, mostly r-selection).

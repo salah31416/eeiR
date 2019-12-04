@@ -24,7 +24,7 @@ License: GPL
 Depends: R (>= 3.5)
 LazyLoad: true
 LazyData: true
-Imports: data.table, openxlsx
+Imports: data.table, leaflet
 NeedsCompilation: no
 BugReports: https://github.com/salah31416/eeiR/issues
 Date: 2019-05-08

@@ -1,5 +1,5 @@
 
-# eeiR - Ecological Evaluation Index
+# eeiR - Ecological Evaluation Index in R
 
 
 <p align="center">
@@ -12,7 +12,7 @@ alt="Classes" width="35%"/>
 
 * [Installation](#installation)
 * [Ecological Status Group - ESG](#ecological-status-group)
-* [Ecological Evaluation Index - EEI-c](#ecological-evaluation-index)
+* [Ecological Evaluation Index - EEI](#ecological-evaluation-index)
 * [Ecological Status Class - ESC](#ecological-status-class)
 * [Ecological Quality Ratio - EQR](#ecological-quality-ratio)
 * [Data ESG](#data-esg)
@@ -27,8 +27,8 @@ install.packages("devtools")
 devtools::install_github("salah31416/eeiR")
 ```
 
-## Ecological Status Group
-
+## Ecological Status Group - ESG
+	
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;ESG%20I%20(\%%20coverage)%20=%20(IA%20\cdot%201)%20+%20(IB%20\cdot%200.8)%20+%20(IC%20\cdot%200.6)" title="ESGI" />
 
 <img src="https://latex.codecogs.com/svg.latex?ESG%20II%20(\%%20coverage)%20=%20(IIA%20\cdot%200.8)%20+%20(IIB%20\cdot%201)%20+%20(IIC%20\cdot%201)" title=ESG2 />
@@ -59,7 +59,7 @@ df = data.frame(ESGI = esg(ia, ib, ic, type = "esg1"), ESGII = esg(iia, iib, typ
 #12 74.80  34.95
 ```
 
-## Ecological Evaluation Index
+## Ecological Evaluation Index - EEI
 
 <img src="https://latex.codecogs.com/svg.latex?x%20=%20\frac{ESGI}{100};%20\quad%20y%20=%20\frac{ESGII}{100}" title="xy" />
 
@@ -90,7 +90,7 @@ eeic(esg1, esg2)
 #12: 12 74.80  34.95 0.79095191 8.327615     High
 ```
 
-## Ecological Quality Ratio
+## Ecological Quality Ratio - EQR
 
 <img src="https://latex.codecogs.com/svg.latex?EQR%20=1.25\cdot%20(EEI_c/RC)-0.25" title="eqr" />
 
@@ -115,7 +115,7 @@ df = data.frame(EEI = eei, EQR = eqr(eei))
 #12 8.327610 0.7909512
 ```
 
-## Ecological Status Class
+## Ecological Status Class - ESC
 
 <img src="https://latex.codecogs.com/svg.latex?ESC%20=\begin{cases}Bad%20%20&%20\text{for%20}%20eei%20\leq%202%20\\Poor%20&%20\text{for%20}%202%20%3C%20eei%20\leq%204%20\\Moderate%20&%20\text{for%20}%204%20%3C%20eei%20\leq%206%20\\Good%20&%20\text{for%20}%206%20%3C%20eei%20\leq%208%20\\High%20&%20\text{for%20}%20eei%20%3E%208\end{cases}" title="classes" />
 
@@ -223,7 +223,7 @@ DD$average
 <p align="center">
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/classes.png" alt="Classes" width="45%"/>
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/hyp.png" alt="Hyperbole" width="50%"/>
-<img src="https://github.com/salah31416/eeiR/blob/master/inst/figures/k2.png" alt="Hyperbole 3D" width="50%"/>
+<img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/k2.png" alt="Hyperbole 3D" width="50%"/>
 </p>
 
 # References
