@@ -17,15 +17,8 @@ esg = function(x = 0, y = 0, z = 0, k = NULL, type = c("esg1", "esg2"))
 ##-------------------------------------------------------------
 ## Ecological Evaluation Index - EEI
 ##-------------------------------------------------------------
-eeic = function(x, y, k = NULL)
+eeic = function(x, y, k = c(a = 0.4680, b = 1.2088, c = -0.3583, d = -1.1289, e = 0.5129, f = -0.1869))
 {
-    ## Coefficient default
-    if(is.null(k))
-    {
-        k = c(a = 0.4680, b = 1.2088, c = -0.3583,
-              d = -1.1289, e = 0.5129, f = -0.1869)
-    }#end if
-
     ## length
     n = 1:max(length(x), length(y))
 
@@ -40,10 +33,10 @@ eeic = function(x, y, k = NULL)
 
     ## limit value h
     h[h > 1] <- 1
-	h[h < 0] <- 0
+	#h[h < 0] <- 0
 
     ## Ecological Evaluation Index
-    eei = 2 + 8*(h)
+    eei = 2 + 8*h
 
 	## Ecological Status Classes
     cl = esc(eei)
@@ -63,27 +56,19 @@ eqr = function(x, rc = 10) 1.25*(x/rc) - 0.25
 ##-------------------------------------------------------------
 ## Ecological Status Classes - ESC
 ##-------------------------------------------------------------
-esc = function(x)
-{
-#	Classes defined for EEI
-#	eei <= 2	 = Bad;
-#	2 < eei <= 4 = Poor;
-#	4 < eei <= 6 = Moderate;
-#	6 < eei <= 8 = Good;
-#	eei > 8		 = High
+esc = function(x) {
 
-	.esc = function(ic)
-	{
-		if(ic <= 2) cl = "Bad"
-		if(ic > 2 & ic <= 4) cl = "Poor"
-		if(ic > 4 & ic <= 6) cl = "Moderate"
-		if(ic > 6 & ic <= 8) cl = "Good"
-		if(ic > 8) cl = "High"
+	out = sapply(x,
+		function(ic) {
+			if(ic <= 2) cl = "Bad"
+			if(ic > 2 & ic <= 4) cl = "Poor"
+			if(ic > 4 & ic <= 6) cl = "Moderate"
+			if(ic > 6 & ic <= 8) cl = "Good"
+			if(ic > 8) cl = "High"
 
-		return(cl)
-	}#end .esc
+			return(cl)
+		}#end function
+	)#end sapply
 
-	cl = sapply(x, .esc)
-
-	return(cl)
+	return(out)
 }#end esc
