@@ -1,8 +1,7 @@
 ##-------------------------------------------------------------
 ## Ecological Status Group - ESG
 ##-------------------------------------------------------------
-esg = function(x = 0, y = 0, z = 0, k = NULL, type = c("esg1", "esg2"))
-{
+esg = function(x = 0, y = 0, z = 0, k = NULL, type = c("esg1", "esg2")) {
 	type = match.arg(type)
 
 	if(is.null(k) & type == "esg1") k = c(1, 0.8, 0.6) else k = k
@@ -15,35 +14,42 @@ esg = function(x = 0, y = 0, z = 0, k = NULL, type = c("esg1", "esg2"))
 
 
 ##-------------------------------------------------------------
+##  Hyperbole
+##-------------------------------------------------------------
+.hyp = function(x, y, k) {
+	x = x/100
+	y = y/100
+
+	#     a  +   bx   +   cx^2   +   dy   +   ey^2   +   fxy
+	#     |	     |        |          |        |          |
+	h = k[1] + k[2]*x + k[3]*x^2 + k[4]*y + k[5]*y^2 + k[6]*x*y
+
+	h[h > 1] <- 1
+
+	## Ecological Evaluation Indice
+	eei = 2 + 8*h
+
+	return(list("eei"=eei, "eqr"=h))
+
+}#end hyp
+
+##-------------------------------------------------------------
 ## Ecological Evaluation Index - EEI
 ##-------------------------------------------------------------
-eeic = function(x, y, k = c(a = 0.4680, b = 1.2088, c = -0.3583, d = -1.1289, e = 0.5129, f = -0.1869))
-{
-    ## length
-    n = 1:max(length(x), length(y))
+eeic = function(x, y, k = c(a = 0.50339, b = 0.95404, c = -0.20394, d = -0.99804, e = 0.35476, f = -0.10909)) {
 
-    ## percent
-    x = x/100
-    y = y/100
-
-    ## hyperbole: Ecological Quality Ratio
-    ##    a  +   b*x  +   c*x^2  +   d*y  +   e*y^2  +   f*x*y
-    ##    |      |        |          |        |          |
-    h = k[1] + k[2]*x + k[3]*x^2 + k[4]*y + k[5]*y^2 + k[6]*x*y
-
-    ## limit value h
-    h[h > 1] <- 1
-	#h[h < 0] <- 0
-
-    ## Ecological Evaluation Index
-    eei = 2 + 8*h
+    ## EEI and EQR
+    h = .hyp(x, y, k)
 
 	## Ecological Status Classes
-    cl = esc(eei)
+    es = esc(h$eei)
 
     ## data.table
-    out = data.table("N" = n, "ESG1" = x*100, "ESG2" = y*100,
-                     "EQR" = h, "EEI" = eei, "ESC" = cl)
+    out = data.table("ESG1" = x, 
+					 "ESG2" = y,
+                     "EQR" = h$eqr, 
+					 "EEI" = h$eei, 
+					 "ESC" = es)
     return(out)
 
 }#end eeic
@@ -51,7 +57,14 @@ eeic = function(x, y, k = c(a = 0.4680, b = 1.2088, c = -0.3583, d = -1.1289, e 
 ##-------------------------------------------------------------
 ## Ecological Quality Ratios - EQR
 ##-------------------------------------------------------------
-eqr = function(x, rc = 10) 1.25*(x/rc) - 0.25
+eqr = function(x) {
+	
+	x[x > 10] <- 10
+	rc = 10
+	out = 1.25 * (x/rc) - 0.25
+
+	return(out)
+}#end eqr
 
 ##-------------------------------------------------------------
 ## Ecological Status Classes - ESC

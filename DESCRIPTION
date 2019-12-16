@@ -1,25 +1,18 @@
 Package: eeiR
 Type: Package
 Title: Ecological Evaluation Index in R
-Version: 0.0.1.900
+Version: 0.0.0.980
 Author: 
-	Izi Sousa-Filho <izi31416@protonmail.com>, 
+	Izidro Sousa-Filho <izi31416@protonmail.com>, 
 	Aline Queiroz <queirozsaq@gmail.com>,
 	Sotiris Orfanidis <sorfanid@inale.gr>
 Maintainer: Sousa-Filho <izi31416@protonmail.com>
-Description: A biotic index for the implementation of WFD in rocky coastal 
-	and sedimentary transitional Mediterranean waters developed by 
-	Dr. Sotiris Orfanidis. The concept of the EEI is based on the obvious
-	and universal pattern that "anthropogenic disturbance, e.g. 
-	pollution-eutrophication, shifts the ecosystem from pristine where 
-	late-successional species is dominant to degraded state, where 
-	opportunistic species is dominant". Marine benthic macrophytes 
-	(seaweeds, angiosperms) were used as bio-indicators of ecosystem 
-	shifts, from the pristine state with late-successional species 
-	(Ecological State Group I) to the degraded state with opportunistic 
-	species (ESG II). In moderately impacted coasts slow growing, 
-	shade-adapted calcareous species (ESG IC) and opportunistic macroalgae
-	often co-dominate. 
+Description: A biotic index for the environmental quality assessment of marine 
+		macroalgae assemblages in coastal and transitional waters. The concept of 
+		EEI is based on the obvious and universal pattern that anthropogenic disturbance,
+		eg, eutrophication caused by pollution, changes the pristine ecosystem, where
+		climax species are dominant, to a degraded state, where opportunistic species 
+		are dominant". 
 License: GPL
 Depends: R (>= 3.5)
 LazyLoad: true

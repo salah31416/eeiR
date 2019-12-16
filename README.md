@@ -36,9 +36,10 @@ devtools::install_github("salah31416/eeiR")
 
 ```r
 ## %Coverage ESG I
-ia = c(0, 10, 5, 0, 0, 0, 15, 25, 22, 43, 55, 65)
+ia = c(0, 10, 5, 0, 0, 0, 15, 25, 22, 43, 55, 6)
 ib = c(25, 27, 13, 15, 12, 25, 20, 28, 7.5, 20, 7, 10)
 ic = c(18, 12, 12, 6.1, 5.1, 2, 5.05, 2.05, 5.05, 5.1, 21, 3)
+
 ## %Coverage ESG II
 iia = c(2.2, 5, 6.55, 55.05, 60.05, 28.15, 8.05, 8.05, 9.05, 16, 15.6, 22.5)
 iib = c(69.85, 43.1, 36.85, 34.4, 55, 49.85, 44.45, 48.75, 41.65, 17.5, 19, 16.95)
@@ -92,7 +93,7 @@ eeic(esg1, esg2)
 
 ## Ecological Quality Ratio
 
-<img src="https://latex.codecogs.com/svg.latex?EQR%20=1.25\cdot%20(EEI_c/RC)-0.25" title="eqr" />
+<img src="https://latex.codecogs.com/svg.latex?EQR%20%3D%5Cbegin%7Bcases%7D%201.25%5Ccdot%28EEI_c/RC%29-0.25%5Cquad%5Ctext%7Bfor%20%7DEEI_c%5Cleq10%26%20%5C%5C%201%5Cquad%5Ctext%7Bfor%20%7DEEI_c%3E10%26%20%5Cend%7Bcases%7D" title="eqr" />
 
 Where: *RC* = 10
 
@@ -146,78 +147,7 @@ df = data.frame(EEI = ei, ESC = esc(ei))
 #21 10.0     High
 ```
 
-## Data ESG
 
-```r
-EEImelt
-#                        Species Group Site Replica Coverage
-#   1: Cystoseira crinitophylla     IA    A      A1        0
-#   2:       Aglaozonia parvula     IB    A      A1        0
-#   3:     Asperococcus bullosus    IB    A      A1        0
-#   4:        Culteria multifida    IB    A      A1        0
-#   5:        Cystoseira barbata    IB    A      A1       15
-#  ---                                                      
-#1304:            Stylonema spp.   IIB    D      D3        1
-#1305:           Ulothrix flacca   IIB    D      D3        0
-#1306:                 Ulva spp.   IIB    D      D3        3
-#1307:       Valonia utricularis   IIB    D      D3        0
-#1308:     Wrangelia penicillata   IIB    D      D3        0
-
-DD = desg(EEImelt, cove="Coverage", group="Group", ia = IA, ib = IB, ic = IC, iia = IIA, iib = IIB,
-		  site = "Site", replica = "Replica")
-
-DD$coverage
-#    Site Replica IA   IB    IC   IIA   IIB
-# 1:    A      A1  0 25.0 18.00  2.20 69.85
-# 2:    A      A2 10 27.0 12.00  5.00 43.10
-# 3:    A      A3  5 13.0 12.00  6.55 36.85
-# 4:    B      B1  0 15.0  6.10 55.05 34.40
-# 5:    B      B2  0 12.0  5.10 60.05 55.00
-# 6:    B      B3  0 25.0  2.00 28.15 49.85
-# 7:    C      C1 15 20.0  5.05  8.05 44.45
-# 8:    C      C2 25 28.0  2.05  8.05 48.75
-# 9:    C      C3 22  7.5  5.05  9.05 41.65
-#10:    D      D1 43 20.0  5.10 16.00 17.50
-#11:    D      D2 55  7.0 21.00 15.60 19.00
-#12:    D      D3 65 10.0  3.00 22.50 16.95
-
-DD$esg
-#    Site Replica  ESGI  ESGII
-# 1:    A      A1 30.80  71.61
-# 2:    A      A2 38.80  47.10
-# 3:    A      A3 22.60  42.09
-# 4:    B      B1 15.66  78.44
-# 5:    B      B2 12.66 103.04
-# 6:    B      B3 21.20  72.37
-# 7:    C      C1 34.03  50.89
-# 8:    C      C2 48.63  55.19
-# 9:    C      C3 31.03  48.89
-#10:    D      D1 62.06  30.30
-#11:    D      D2 73.20  31.48
-#12:    D      D3 74.80  34.95
-
-DD$eei
-#    Site Replica      EEI        EQR      ESC
-# 1:    A      A1 3.757661 0.21970761     Poor
-# 2:    A      A2 5.447914 0.43098923 Moderate
-# 3:    A      A3 4.566555 0.32081942 Moderate
-# 4:    B      B1 2.444982 0.05562272     Poor
-# 5:    B      B2 2.000000 0.00000000      Bad
-# 6:    B      B3 3.049035 0.13112933     Poor
-# 7:    C      C1 4.910625 0.36382817 Moderate
-# 8:    C      C2 5.633041 0.45413015 Moderate
-# 9:    C      C3 4.807307 0.35091334 Moderate
-#10:    D      D1 8.000569 0.75007118     High
-#11:    D      D2 8.505904 0.81323800     High
-#12:    D      D3 8.327615 0.79095191     High
-
-DD$average
-#   Site      EEI        EQR      ESC
-#1:    A 4.590710 0.32383876 Moderate
-#2:    B 2.498005 0.06225068     Poor
-#3:    C 5.116991 0.38962389 Moderate
-#4:    D 8.278030 0.78475370     High
-```
 ## Graphics
 
 <p align="center">

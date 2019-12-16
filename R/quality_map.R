@@ -1,18 +1,8 @@
-#######################################################
-## Projeto:
-##
-## Data: 
-## Hora: 
-##
-## ## Autor: izi
-##
-## Encoding: UTF-8
-#######################################################
 
-library(leaflet)
-
-.getColor <- function(dta)
-{
+##-------------------------------------------------------------
+## 
+##-------------------------------------------------------------
+.getColor <- function(dta) {
 	sapply(dta$ESC, function(esc)
 		   {
 			   if(esc == "Bad") {
@@ -30,8 +20,11 @@ library(leaflet)
 }#end getColor
 
 
-quality_map = function(dta, lng = "lng", lat = "lat", esc = "ESC", idl = "")
-{
+##-------------------------------------------------------------
+## 
+##-------------------------------------------------------------
+quality_map = function(dta, lng = "lng", lat = "lat", esc = "ESC", idl = "") {
+
 	idl = parse(text=idl)
 	esc = parse(text=esc)
 	lng = parse(text=lng)
@@ -67,6 +60,3 @@ quality_map = function(dta, lng = "lng", lat = "lat", esc = "ESC", idl = "")
 		return(map)
 }#end mapa
 
-#library(data.table)
-#BAES = fread("BA_ES_completa.csv", sep=";", dec=",")
-#quality_map(BAES )
