@@ -1,18 +1,18 @@
 Package: eeiR
 Type: Package
 Title: Ecological Evaluation Index in R
-Version: 0.0.0.980
+Version: 0.0.1.000
 Author: 
 	Izidro Sousa-Filho <izi31416@protonmail.com>, 
 	Aline Queiroz <queirozsaq@gmail.com>,
 	Sotiris Orfanidis <sorfanid@inale.gr>
 Maintainer: Sousa-Filho <izi31416@protonmail.com>
-Description: A biotic index for the environmental quality assessment of marine 
-		macroalgae assemblages in coastal and transitional waters. The concept of 
-		EEI is based on the obvious and universal pattern that anthropogenic disturbance,
-		eg, eutrophication caused by pollution, changes the pristine ecosystem, where
-		climax species are dominant, to a degraded state, where opportunistic species 
-		are dominant". 
+Description: A biotic index for the environmental quality assessment of 
+    marine macroalgae assemblages in coastal and transitional waters. The 
+	concept of EEI is based on the obvious and universal pattern that 
+	anthropogenic disturbance, eg, eutrophication caused by pollution, 
+	changes the pristine ecosystem, where climax species are dominant, 
+	to a degraded state, where opportunistic species are dominant". 
 License: GPL
 Depends: R (>= 3.5)
 LazyLoad: true

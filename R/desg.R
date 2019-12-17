@@ -2,7 +2,7 @@
 ##-------------------------------------------------------------
 ## 
 ##-------------------------------------------------------------
-desg = function(dta, coverage, group, place) {
+desg = function(dta, coverage, group, place, k = NULL) {
 
 	ESGI=ESGII=EEI=EQR=ESC=NULL
 
@@ -10,6 +10,8 @@ desg = function(dta, coverage, group, place) {
 
 	coverage = parse(text=coverage)
 	group1 = parse(text=group)
+
+	if(is.null(k)) k = c(a = 0.5, b = 0.95, c = -0.2, d = -1, e = 0.35, f = -0.11)
 
 	DTA = DTA[!(eval(group1) == "ND" | is.na(eval(coverage)))]
 
@@ -30,11 +32,11 @@ desg = function(dta, coverage, group, place) {
 	D2 = dcast(D1, func, value.var = "Total", fill=0)
 
 	D3 = D2[, list(ESGI = esg(eval(ia), eval(ib), eval(ic), type = "esg1"),
-					 ESGII = esg(eval(iia), eval(iib), eval(iib), type = "esg2")
+				   ESGII = esg(eval(iia), eval(iib), eval(iib), type = "esg2")
 					 ), by = c(place)]
 
-	D4 = D3[, list(EEI = eeic(ESGI, ESGII)$EEI,
-				   EQR = eeic(ESGI, ESGII)$EQR
+	D4 = D3[, list(EEI = eeic(ESGI, ESGII, k)$EEI,
+				   EQR = eeic(ESGI, ESGII, k)$EQR
 				   ), by = c(place)]
 
 	D4[, ESC := esc(EEI)]
