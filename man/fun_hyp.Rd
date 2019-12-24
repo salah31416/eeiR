@@ -1,9 +1,9 @@
 % 
-\name{hyp}
-\alias{hyp}
+\name{fun_hyp}
+\alias{fun_hyp}
 \title{Hiperbolic Function}
 \usage{
-hyp(x, y, k)
+fun_hyp(x, y, k)
 }
 \arguments{
 	\item{x}{ESGI value }
