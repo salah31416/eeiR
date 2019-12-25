@@ -1,9 +1,9 @@
 % 
-\name{fun_hyp}
-\alias{fun_hyp}
-\title{Hiperbolic Function}
+\name{eei_hyp}
+\alias{eei_hyp}
+\title{EEI Hiperbolic Function}
 \usage{
-fun_hyp(x, y, k)
+eei_hyp(x, y, k = c(a = 0.503, b = 0.954, c = -0.204, d = -0.998, e = 0.355, f = -0.109))
 }
 \arguments{
 	\item{x}{ESGI value }

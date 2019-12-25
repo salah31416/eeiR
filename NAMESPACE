@@ -7,7 +7,7 @@ export(esg)
 export(desg)
 export(group_esg)
 export(quality_map)
-export(fun_hyp)
+export(eei_hyp)
 ## Import
 import(data.table)
 import(leaflet)
