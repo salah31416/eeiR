@@ -87,25 +87,26 @@ desg = function(dta,
 	iia = ifelse("IIA" %in% g, parse(text="IIA"), 0)
 	iib = ifelse("IIB" %in% g, parse(text="IIB"), 0)
 
-	D1 = DTA[, list(Total = sum(eval(coverage))), by = c(group, place)]
+	D1 = DTA[, list(Total = sum(eval(coverage))), 
+			 by = c(group, place)]
 
 	func = paste(paste(c(place), collapse = " + "), "~",
 				 paste(group, collapse = " + "))
 
 	D2 = dcast(D1, func, value.var = "Total", fill=0)
 
-	D2[, list(ESGI = esg(eval(ia), eval(ib), eval(ic), type = "esg1"),
+	D3 = D2[, list(ESGI = esg(eval(ia), eval(ib), eval(ic), type = "esg1"),
 			  ESGII = esg(eval(iia), eval(iib), eval(iib), type = "esg2")
 			 ), by = c(place)]
 
 	D4 = D3[, list(EEIc = eeic(ESGI, ESGII, k),
 				   EQR = eqr(eeic(ESGI, ESGII, k))
-				  ), by = c(place)]
+				  ), by = place]
 
 	D4[, ESC := esc(EEIc)]
 
-	D5 = D4[, list(EEIc = mean(EEI), EQR = mean(EQR))
-	       ][, list(ESC = esc(EEI)), by = c("EEI", "EQR")]
+	D5 = D4[, list(EEIc = mean(EEIc), EQR = mean(EQR))
+	       ][, list(ESC = esc(EEIc)), by = c("EEIc", "EQR")]
 
 	nm = names(D2)[1]
 
