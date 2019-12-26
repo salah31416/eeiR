@@ -37,7 +37,7 @@ esg = function(ia = 0, ib = 0, ic = 0, k = NULL, type = c("esg1", "esg2"))
 	type = match.arg(type)
 
 	if(is.null(k) & type == "esg1") k = c(1, 0.8, 0.6)
-	if(is.null(k) & type == "esg2") k = c(0.8, 1, 1)
+	if(is.null(k) & type == "esg2") k = c(0.8, 1, 0)
 
 	out = ia * k[1] + ib * k[2] + ic * k[3]
 

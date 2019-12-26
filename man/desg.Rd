@@ -3,13 +3,14 @@
 \alias{desg}
 \title{Ecological Status Group}
 \usage{
-desg(dta, coverage, group, place, k = c(a = 0.503, b = 0.954, c = -0.204, d = -0.998, e = 0.355, f = -0.109))
+desg(dta, coverage, group, by, mean_by = NULL, k = c(a = 0.503, b = 0.954, c = -0.204, d = -0.998, e = 0.355, f = -0.109))
 }
 \arguments{
 	\item{dta}{data.table}
 	\item{coverage}{name coverage}
 	\item{group}{name group ESG}
-	\item{place}{local}
+	\item{by}{vector}
+	\item{mean_by}{mean by}
 	\item{k}{constant for EEI}
 }
 \description{
