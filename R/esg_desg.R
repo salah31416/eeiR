@@ -6,10 +6,10 @@ group_esg = function(dta,
 					 ColNameDTA = "Taxa",
 					 ColNameREF = "Taxa",
 					 ColNameESG = "Group",
-					 ref = c("brazil", "greece"),
+					 ref = c("gbra", "sgre", "ggre"),
 					 genus = TRUE) 
 {
-	ID = NULL
+	ID=ESGg=ESGs=Taxa=NULL
 
 	nameREF = parse(text = ColNameREF)
 	nameDTA = parse(text = ColNameDTA)
@@ -20,14 +20,17 @@ group_esg = function(dta,
 	} else {
 		ref = match.arg(ref)
 
-		bra = 'esg_ref/ESG_BRA.rds'
-		gre = 'esg_ref/ESG_GRE.rds'
+		bra = 'esg_ref/ESG_BRA.csv'
+		gre = 'esg_ref/ESG_GRE.csv'
+
 
 		REF = switch(ref,
-					 "brazil" =
-				readRDS(system.file(bra, package = 'eeiR')),
-					 "greece" =
-				readRDS(system.file(gre, package = 'eeiR'))
+					 "gbra" =
+		  fread(system.file(bra, package = 'eeiR'))[,list(Taxa,ESGg)],
+					 "sgre" =
+		  fread(system.file(gre, package = 'eeiR'))[,list(Taxa,ESGs)],
+					 "ggre" =
+		  fread(system.file(gre, package = 'eeiR'))[,list(Taxa,ESGg)]
 		)#end switch
 	}#end if
 

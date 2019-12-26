@@ -3,7 +3,7 @@
 \alias{group_esg}
 \title{Ecological Status Group}
 \usage{
-group_esg(dta, ColNameDTA = "Taxa", ColNameREF = "Taxa", ColNameESG = "Group",ref = c("brazil", "greece"), genus = TRUE)
+group_esg(dta, ColNameDTA = "Taxa", ColNameREF = "Taxa", ColNameESG = "Group", ref = c("gbra", "sgre", "ggre"), genus = TRUE)
 }
 \arguments{
 	\item{dta}{data}
