@@ -1,72 +1,8 @@
 
 ##-------------------------------------------------------------
-##
-##-------------------------------------------------------------
-group_esg = function(dta,
-					 ColNameDTA = "Taxa",
-					 ColNameREF = "Taxa",
-					 ColNameESG = "Group",
-					 ref = c("gbra", "sgre", "ggre"),
-					 genus = TRUE) 
-{
-	ID=ESGg=ESGs=Taxa=NULL
-
-	nameREF = parse(text = ColNameREF)
-	nameDTA = parse(text = ColNameDTA)
-
-	if(is.data.frame(ref)) {
-		REF = copy(setDT(ref))
-		REF[, eval(ColNameREF) := .firstup(eval(nameREF))]
-	} else {
-		ref = match.arg(ref)
-
-		bra = 'esg_ref/ESG_BRA.csv'
-		gre = 'esg_ref/ESG_GRE.csv'
-
-
-		REF = switch(ref,
-					 "gbra" =
-		  fread(system.file(bra, package = 'eeiR'))[,list(Taxa,ESGg)],
-					 "sgre" =
-		  fread(system.file(gre, package = 'eeiR'))[,list(Taxa,ESGs)],
-					 "ggre" =
-		  fread(system.file(gre, package = 'eeiR'))[,list(Taxa,ESGg)]
-		)#end switch
-	}#end if
-
-	## copy and convert to data.table
-	DTA = copy(setDT(dta))
-	DTA[, eval(ColNameDTA) := .firstup(eval(nameDTA))]
-
-	## macroalgae column name of dta
-	if(genus) {
-		DTA[, ID := .cut_taxa(eval(nameDTA), n = 1)]
-		REF[, ID := .cut_taxa(eval(nameREF), n = 1)]
-		REF = REF[, list(ID = unique(ID)), by = ColNameESG]
-	} else {
-		DTA[, ID := .firstup(paste(.cut_taxa(eval(nameDTA), n = 1),
-								  .cut_taxa(eval(nameDTA))))]
-		## macroalgae column name of esg reference
-		REF[, ID := eval(nameREF)]
-		REF = REF[, list(ID = unique(ID)), by = ColNameESG]
-	}#end if
-
-	## join esg_ref and dta
-	OUT = REF[DTA, on = "ID"]
-	OUT[, ID := NULL]
-
-	## UG (undefined group)
-	nesg1 = parse(text = ColNameESG)
-	OUT[is.na(eval(nesg1)), eval(ColNameESG) := "UG"]
-	OUT[eval(nesg1) == "", eval(ColNameESG) := "UG"]
-
-	return(OUT[])
-}#end group_esg
-
-##-------------------------------------------------------------
 ## 
 ##-------------------------------------------------------------
-desg = function(dta,
+index = function(dta,
 				coverage,
 				group,
 				by,
@@ -124,4 +60,4 @@ desg = function(dta,
 	OUT = D2[D3, on = by][D4, on = by]
 
 	return(list("Index" = OUT, "Average" = MEAN_by))
-}#end desg
+}#end index
