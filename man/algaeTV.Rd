@@ -1,12 +1,12 @@
 % 
 \docType{data}
-\name{EEI}
-\alias{EEI}
-\title{Data for Ecological Evaluation Index}
+\name{AlgaeTV}
+\alias{AlgaeTV}
+\title{Data theoretical values for Ecological Evaluation Index}
 \format{Use data
 	\describe{
-		\item{specie}{species}
-		\item{Group}{group}
+		\item{Taxa}{species or genus}
+		\item{Group}{group ESG}
 		\item{A1...D3}{replicas}
 	}
 }
@@ -14,7 +14,7 @@
 	http://eei.gr/index.html
 }
 \usage{
-EEI
+AlgaeTV
 }
 \description{
 	Marine benthic macrophytes 

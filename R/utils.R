@@ -83,15 +83,9 @@
 		message("Classification of intervals")
 		cat(paste(ESC, V, R), sep="\n")
 
-		for(i in 1:nrow(RV))
-		{
+		for(i in 1:nrow(RV)) {
 			rela = parse(text=RV[i,1])
 			SEQ[eval(rela), z := RV[i,2]]
-
-#			z0 = SEQ[eval(rela), unique(z)]
-#			w = paste(paste0(" ", z0," ", RV[i,3], ":"),
-#					  RV[i,1], sep="  ")
-#			message(w)
 		}#end for
 	}#end if
 

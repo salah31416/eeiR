@@ -3,7 +3,7 @@ note <- sprintf("R package version %s", meta$Version)
 
 bibentry(bibtype = "manual",
          title = "eeiR: Ecological Evaluation Index in R",
-         author = personList(as.person("Izi Sousa-Filho"),
+         author = personList(as.person("Izidro Sousa-Filho"),
            as.person("Aline Queiroz"),
            as.person("Sotiris Orfanidis" )),
          year = year,

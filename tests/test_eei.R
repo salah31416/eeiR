@@ -11,4 +11,4 @@
 
 require(eeiR)
 
-a = eeic(0, 79)
+a = eei(0, 79, type = "eeic")

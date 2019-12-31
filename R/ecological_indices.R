@@ -6,6 +6,7 @@ eqr = function(x)
 {
 	rc = 10
 	out = 1.25 * (x/rc) - 0.25
+	out[out > 1] <- 1
 
 	return(out)
 }#end eqr
@@ -32,23 +33,28 @@ esc = function(x, FUN = NULL)
 ##-------------------------------------------------------------
 ## Ecological Status Group - ESG
 ##-------------------------------------------------------------
-esg = function(ia = 0, ib = 0, ic = 0, k = NULL, type = c("esg1", "esg2")) 
+esg = function(a = 0, b = 0, c = 0, type = c("esg1", "esg2"), k = NULL)
 {
 	type = match.arg(type)
 
 	if(is.null(k) & type == "esg1") k = c(1, 0.8, 0.6)
-	if(is.null(k) & type == "esg2") k = c(0.8, 1, 0)
+	if(is.null(k) & type == "esg2") k = c(0.8, 1, 1)
 
-	out = ia * k[1] + ib * k[2] + ic * k[3]
+	out = a * k[1] + b * k[2] + c * k[3]
 
 	return(out)
 }#end esg
 
+
 ##-------------------------------------------------------------
 ## Ecological Evaluation Index - EEI
 ##-------------------------------------------------------------
-eei_hyp = function(x, y, k = c(a = 0.503, b = 0.954, c = -0.204, d = -0.998, e = 0.355, f = -0.109)) 
+eei = function(x, y, type = c("esi", "hyp", "eeic"), k = c(0.503, 0.954, -0.204, -0.998, 0.355, -0.109))
 {
+	k = unname(k)
+
+	type = match.arg(type)
+
 	x = x/100
 	y = y/100
 
@@ -56,24 +62,18 @@ eei_hyp = function(x, y, k = c(a = 0.503, b = 0.954, c = -0.204, d = -0.998, e =
 	#     |	     |        |          |        |          |
 	h = k[1] + k[2]*x + k[3]*x^2 + k[4]*y + k[5]*y^2 + k[6]*x*y
 
-	h[h > 1] <- 1
+	switch(type,
+		   "esi" = {h},
+		   "hyp" = {
+			   h[h > 1] <- 1
+			   h = 2 + 8 * h
+			   },
+		   "eeic" = {
+			   h[h > 1] <- 1
+			   h = 2 + 8 * h
+			   h[h < 2] <- 2
+			   }
+		   )#end switch
 
-	## Ecological Evaluation Index
-	eei = 2 + 8 * h
-
-	return(eei)
-}#end hyp
-
-##-------------------------------------------------------------
-## Ecological Evaluation Index Coverage - EEIc
-##-------------------------------------------------------------
-eeic = function(x, y, k = c(a = 0.503, b = 0.954, c = -0.204, d = -0.998, e = 0.355, f = -0.110)) 
-{
-    ## EEI
-    h = eei_hyp(x, y, k)
-
-	## eeic
-	h[h < 2] <- 2
-    
-    return(h)
-}#end eeic
+	return(h)
+}#end eei

@@ -1,13 +1,12 @@
+# 
 
-## Ecological Evaluation Index
-export(eeic)
+## Indices
+export(eei)
 export(esc)
 export(eqr)
 export(esg)
 export(index)
 export(group_esg)
 export(quality_map)
-export(eei_hyp)
-## Import
 import(data.table)
 import(leaflet)
