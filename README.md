@@ -77,7 +77,7 @@ eeic = eei(esg1, esg2, "eeic")
 
 ## Ecological Quality Ratio
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=eqr=\begin{cases}&space;1.25\cdot&space;(eei_c/RC)&space;&&space;\text{&space;if&space;}&space;eei_c\leq10&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;eei_c>10&space;\\&space;0&space;&&space;\text{&space;if&space;}&space;eei_c<0&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?eqr=\begin{cases}&space;1.25\cdot&space;(eei/RC)&space;&&space;\text{&space;if&space;}&space;eei\leq10&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;eei>10&space;\\\\&space;0&space;&&space;\text{&space;if&space;}&space;eei<0&space;\end{cases}" title="eqr" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=eqr=\begin{cases}&space;1.25\cdot&space;(eei_c/RC)&space;&&space;\text{&space;if&space;}&space;eei_c\leq10&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;eei_c>10&space;\\&space;0&space;&&space;\text{&space;if&space;}&space;eei_c<0&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?eqr=\begin{cases}&space;1.25\cdot&space;(eei/RC)&space;&&space;\text{&space;if&space;}&space;eei\leq10&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;eei>10&space;\\&space;0&space;&&space;\text{&space;if&space;}&space;eei<0&space;\end{cases}" title="eqr" /></a>
 
 Where: *RC* = 10
 
