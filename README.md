@@ -40,14 +40,16 @@ ia = c(0, 10, 5, 0, 0)
 ib = c(25, 27, 13, 15, 12)
 ic = c(18, 12, 12, 6.1, 5.1)
 
-esg(ia, ib, ic, type = "esg1")
-#[1] 30.80 38.80 22.60 15.66 12.66
-
 ## %Coverage ESG II
 iia = c(2.2, 5, 6.55, 55.05, 60.05)
 iib = c(69.85, 43.1, 36.85, 34.4, 55)
 
-esg(iia, iib, 0, type = "esg2")
+## ESG I
+esg1 = esg(ia, ib, ic, type = "esg1")
+#[1] 30.80 38.80 22.60 15.66 12.66
+
+## ESG II
+esg2 = esg(iia, iib, 0, type = "esg2")
 #[1]  71.61  47.10  42.09  78.44 103.04
 ```
 
@@ -56,43 +58,49 @@ esg(iia, iib, 0, type = "esg2")
 <img src="https://latex.codecogs.com/svg.latex?x%20=%20\frac{ESGI}{100};%20\quad%20y%20=%20\frac{ESGII}{100}" title="xy" />
 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=eei=\begin{cases}&space;esi=a&plus;bx&plus;cx^2&plus;dy&plus;ey^2&plus;fxy&space;\\\\&space;hyp=\begin{cases}&space;1&space;&&space;\text{&space;if&space;}&space;esi>1&space;\\&space;2&plus;8\cdot&space;esi&&space;\end{cases}&space;\\\\&space;eeic=\begin{cases}&space;2&space;&&space;\text{&space;if&space;}&space;hyp<2&space;\\&space;2&plus;8\cdot&space;hyp&&space;\end{cases}&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?eei=\begin{cases}&space;esi=a&plus;bx&plus;cx^2&plus;dy&plus;ey^2&plus;fxy&space;\\\\&space;hyp=\begin{cases}&space;1&space;&&space;\text{&space;if&space;}&space;esi>1&space;\\&space;2&plus;8\cdot&space;esi&&space;\end{cases}&space;\\\\&space;eeic=\begin{cases}&space;2&space;&&space;\text{&space;if&space;}&space;hyp<2&space;\\&space;2&plus;8\cdot&space;hyp&&space;\end{cases}&space;\end{cases}" title="eei=\begin{cases} esi=a+bx+cx^2+dy+ey^2+fxy \\\\ hyp=\begin{cases} 1 & \text{ if } esi>1 \\ 2+8\cdot esi& \end{cases} \\\\ eeic=\begin{cases} 2 & \text{ if } hyp<2 \\ 2+8\cdot hyp& \end{cases} \end{cases}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=EEI=\begin{cases}&space;esi=a&plus;bx&plus;cx^2&plus;dy&plus;ey^2&plus;fxy&space;\\\\&space;hyp=\begin{cases}&space;1&space;&&space;\text{&space;if&space;}&space;esi>1&space;\\&space;2&plus;8\cdot&space;esi&&space;\end{cases}&space;\\\\&space;eeic=\begin{cases}&space;2&space;&&space;\text{&space;if&space;}&space;hyp<2&space;\\&space;2&plus;8\cdot&space;hyp&&space;\end{cases}&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?EEI=\begin{cases}&space;esi=a&plus;bx&plus;cx^2&plus;dy&plus;ey^2&plus;fxy&space;\\\\&space;hyp=\begin{cases}&space;1&space;&&space;\text{&space;if&space;}&space;esi>1&space;\\&space;2&plus;8\cdot&space;esi&&space;\end{cases}&space;\\\\&space;eeic=\begin{cases}&space;2&space;&&space;\text{&space;if&space;}&space;hyp<2&space;\\&space;2&plus;8\cdot&space;hyp&&space;\end{cases}&space;\end{cases}" title="eei=\begin{cases} esi=a+bx+cx^2+dy+ey^2+fxy \\\\ hyp=\begin{cases} 1 & \text{ if } esi>1 \\ 2+8\cdot esi& \end{cases} \\\\ eeic=\begin{cases} 2 & \text{ if } hyp<2 \\ 2+8\cdot hyp& \end{cases} \end{cases}" /></a>
 
 where: *x* is the score in *ESG I*, *y* is the score in *ESG II*
 and *a*, *b*, *c*, *d*, *e* and *f* are the coefficients of the hyperbola.
 
 ```r
-esg1 = c(9, 38.8, 22.6, 15.66)
-esg2 = c(97, 47.1, 42.09, 78.44)
-
+## ESI
 esi = eei(esg1, esg2, "esi")
-#[1] -0.05634860  0.43121705  0.63437407  0.06959875
+#[1]  0.22081475  0.43121705  0.34064851  0.06959875 -0.04513925
 
+## Hyp
 hyp = eei(esg1, esg2, "hyp")
-#[1] 1.549211 5.449736 7.074993 2.556790
+#[1] 3.766518 5.449736 4.725188 2.556790 1.638886
 
+## EEIc
 eeic = eei(esg1, esg2, "eeic")
-#[1] 2.000000 5.449736 7.074993 2.556790
+#[1] 3.766518 5.449736 4.725188 2.556790 2.000000
 ```
 
 ## Ecological Quality Ratio
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=eqr=\begin{cases}&space;1.25\cdot&space;(eei_c/RC)&space;&&space;\text{&space;if&space;}&space;eei_c\leq10&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;eei_c>10&space;\\&space;0&space;&&space;\text{&space;if&space;}&space;eei_c<0&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?eqr=\begin{cases}&space;1.25\cdot&space;(eei/RC)&space;&&space;\text{&space;if&space;}&space;eei\leq10&space;\\&space;1&space;&&space;\text{&space;if&space;}&space;eei>10&space;\\&space;0&space;&&space;\text{&space;if&space;}&space;eei<0&space;\end{cases}" title="eqr" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=EQR=1.25\cdot(x/10)-0.25" target="_blank"><img src="https://latex.codecogs.com/gif.latex?EQR=1.25\cdot(x/10)-0.25" title="EQR=1.25\cdot(x/10)-0.25" /></a>
 
-Where: *RC* = 10
+Where: *RC* = 10; *x* = *hyp* or *eeic*
+
+The result `eqr(hyp)` is equal to output `eei(esg1, esg2, "esi")`.
 
 ```r
+eqr(hyp)
+#[1]  0.22081475  0.43121705  0.34064851  0.06959875 -0.04513925
+
 eqr(eeic)
-#[1] 0.00000000 0.43121705 0.34064851 0.06959875
+#[1] 0.22081475 0.43121705 0.34064851 0.06959875 0.00000000
 ```
 
 ## Ecological Status Class
 
-<img src="https://latex.codecogs.com/svg.latex?ESC%20=\begin{cases}Bad%20%20&%20\text{if%20}%20eei%20\leq%202%20\\Poor%20&%20\text{if%20}%202%20%3C%20eei%20\leq%204%20\\Moderate%20&%20\text{if%20}%204%20%3C%20eei%20\leq%206%20\\Good%20&%20\text{if%20}%206%20%3C%20eei%20\leq%208%20\\High%20&%20\text{if%20}%20eei%20%3E%208\end{cases}" title="classes" />
+<a href="https://www.codecogs.com/eqnedit.php?latex=ESC=\begin{cases}&space;Bad&space;&&space;\text{&space;if&space;}&space;eeic\leq2&space;\\&space;Poor&space;&&space;\text{&space;if&space;}&space;2<eeic\leq4&space;\\&space;Moderate&space;&&space;\text{&space;if&space;}&space;4<eeic\leq6&space;\\&space;Good&space;&&space;\text{&space;if&space;}&space;6<eeic\leq8&space;\\&space;High&space;&&space;\text{&space;if&space;}&space;eeic>8&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?ESC=\begin{cases}&space;Bad&space;&&space;\text{&space;if&space;}&space;eeic\leq2&space;\\&space;Poor&space;&&space;\text{&space;if&space;}&space;2<eeic\leq4&space;\\&space;Moderate&space;&&space;\text{&space;if&space;}&space;4<eeic\leq6&space;\\&space;Good&space;&&space;\text{&space;if&space;}&space;6<eeic\leq8&space;\\&space;High&space;&&space;\text{&space;if&space;}&space;eeic>8&space;\end{cases}" title="ESC=\begin{cases} Bad & \text{ if } eeic\leq2 \\ Poor & \text{ if } 2<eeic\leq4 \\ Moderate & \text{ if } 4<eeic\leq6 \\ Good & \text{ if } 6<eeic\leq8 \\ High & \text{ if } eeic>8 \end{cases}" /></a>
 
 ```r
+## ESC
 esc(eeic)
-#[1] "Bad"      "Moderate" "Good"     "Poor" 
+#[1] "Poor"     "Moderate" "Moderate" "Poor"     "Bad"
 ```
 
 

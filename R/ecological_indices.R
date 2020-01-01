@@ -6,7 +6,6 @@ eqr = function(x)
 {
 	rc = 10
 	out = 1.25 * (x/rc) - 0.25
-	out[out > 1] <- 1
 
 	return(out)
 }#end eqr
@@ -49,7 +48,7 @@ esg = function(a = 0, b = 0, c = 0, type = c("esg1", "esg2"), k = NULL)
 ##-------------------------------------------------------------
 ## Ecological Evaluation Index - EEI
 ##-------------------------------------------------------------
-eei = function(x, y, type = c("esi", "hyp", "eeic"), k = c(0.503, 0.954, -0.204, -0.998, 0.355, -0.109))
+eei = function(x, y, type = c("eeic", "hyp", "esi"), k = c(a = 0.503, b = 0.954, c = -0.204, d = -0.998, e = 0.355, f = -0.109))
 {
 	k = unname(k)
 
@@ -63,17 +62,17 @@ eei = function(x, y, type = c("esi", "hyp", "eeic"), k = c(0.503, 0.954, -0.204,
 	h = k[1] + k[2]*x + k[3]*x^2 + k[4]*y + k[5]*y^2 + k[6]*x*y
 
 	switch(type,
-		   "esi" = {h},
-		   "hyp" = {
-			   h[h > 1] <- 1
-			   h = 2 + 8 * h
-			   },
 		   "eeic" = {
 			   h[h > 1] <- 1
 			   h = 2 + 8 * h
 			   h[h < 2] <- 2
-			   }
-		   )#end switch
+		   },
+		   "hyp" = {
+			   h[h > 1] <- 1
+			   h = 2 + 8 * h
+		   },
+		   "esi" = { h }
+	)#end switch
 
 	return(h)
 }#end eei
