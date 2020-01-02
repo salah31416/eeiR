@@ -27,6 +27,8 @@ install.packages("devtools")
 devtools::install_github("salah31416/eeiR")
 ```
 
+## Functional Group
+
 ## Ecological Status Group
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;ESG%20I%20(\%%20coverage)%20=%20(IA%20\cdot%201)%20+%20(IB%20\cdot%200.8)%20+%20(IC%20\cdot%200.6)" title="ESGI" />
@@ -95,13 +97,28 @@ eqr(eeic)
 
 ## Ecological Status Class
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=ESC=\begin{cases}&space;Bad&space;&&space;\text{&space;if&space;}&space;eeic\leq2&space;\\&space;Poor&space;&&space;\text{&space;if&space;}&space;2<eeic\leq4&space;\\&space;Moderate&space;&&space;\text{&space;if&space;}&space;4<eeic\leq6&space;\\&space;Good&space;&&space;\text{&space;if&space;}&space;6<eeic\leq8&space;\\&space;High&space;&&space;\text{&space;if&space;}&space;eeic>8&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?ESC=\begin{cases}&space;Bad&space;&&space;\text{&space;if&space;}&space;eeic\leq2&space;\\&space;Poor&space;&&space;\text{&space;if&space;}&space;2<eeic\leq4&space;\\&space;Moderate&space;&&space;\text{&space;if&space;}&space;4<eeic\leq6&space;\\&space;Good&space;&&space;\text{&space;if&space;}&space;6<eeic\leq8&space;\\&space;High&space;&&space;\text{&space;if&space;}&space;eeic>8&space;\end{cases}" title="ESC=\begin{cases} Bad & \text{ if } eeic\leq2 \\ Poor & \text{ if } 2<eeic\leq4 \\ Moderate & \text{ if } 4<eeic\leq6 \\ Good & \text{ if } 6<eeic\leq8 \\ High & \text{ if } eeic>8 \end{cases}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=ESC=\begin{cases}&space;Bad&space;&&space;\text{&space;if&space;}&space;eeic\leq2&space;\\&space;Low&space;&&space;\text{&space;if&space;}&space;2<eeic\leq4&space;\\&space;Moderate&space;&&space;\text{&space;if&space;}&space;4<eeic\leq6&space;\\&space;Good&space;&&space;\text{&space;if&space;}&space;6<eeic\leq8&space;\\&space;High&space;&&space;\text{&space;if&space;}&space;eeic>8&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?ESC=\begin{cases}&space;Bad&space;&&space;\text{&space;if&space;}&space;eeic\leq2&space;\\&space;Low&space;&&space;\text{&space;if&space;}&space;2<eeic\leq4&space;\\&space;Moderate&space;&&space;\text{&space;if&space;}&space;4<eeic\leq6&space;\\&space;Good&space;&&space;\text{&space;if&space;}&space;6<eeic\leq8&space;\\&space;High&space;&&space;\text{&space;if&space;}&space;eeic>8&space;\end{cases}" title="ESC=\begin{cases} Bad & \text{ if } eeic\leq2 \\ Low & \text{ if } 2<eeic\leq4 \\ Moderate & \text{ if } 4<eeic\leq6 \\ Good & \text{ if } 6<eeic\leq8 \\ High & \text{ if } eeic>8 \end{cases}" /></a>
 
 ```r
 ## ESC
 esc(eeic)
-#[1] "Poor"     "Moderate" "Moderate" "Poor"     "Bad"
+#[1] "Low"     "Moderate" "Moderate" "Low"     "Bad"
 ```
+
+## Insert Group ESG in Data
+
+```r
+## Algae Theoretical Values
+data(AlgaeTV)
+
+```
+
+## Define Indices
+
+```r
+
+```
+
 
 
 ## Graphics
