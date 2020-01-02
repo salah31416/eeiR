@@ -27,8 +27,6 @@ install.packages("devtools")
 devtools::install_github("salah31416/eeiR")
 ```
 
-## Functional Group
-
 ## Ecological Status Group
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;ESG%20I%20(\%%20coverage)%20=%20(IA%20\cdot%201)%20+%20(IB%20\cdot%200.8)%20+%20(IC%20\cdot%200.6)" title="ESGI" />
@@ -104,22 +102,6 @@ eqr(eeic)
 esc(eeic)
 #[1] "Low"     "Moderate" "Moderate" "Low"     "Bad"
 ```
-
-## Insert Group ESG in Data
-
-```r
-## Algae Theoretical Values
-data(AlgaeTV)
-
-```
-
-## Define Indices
-
-```r
-
-```
-
-
 
 ## Graphics
 
