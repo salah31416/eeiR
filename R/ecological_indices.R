@@ -32,17 +32,18 @@ esc = function(x, FUN = NULL)
 ##-------------------------------------------------------------
 ## Ecological Status Group - ESG
 ##-------------------------------------------------------------
-esg = function(a = 0, b = 0, c = 0, type = c("esg1", "esg2"), k = NULL)
+esg = function(type = c("1", "2"), a = 0, b = 0, c = 0, k = NULL)
 {
 	type = match.arg(type)
 
-	if(is.null(k) & type == "esg1") k = c(1, 0.8, 0.6)
-	if(is.null(k) & type == "esg2") k = c(0.8, 1, 1)
+	if(is.null(k) & type == "1") k = c(1, 0.8, 0.6)
+	if(is.null(k) & type == "2") k = c(0.8, 1, 1)
 
 	out = a * k[1] + b * k[2] + c * k[3]
 
 	return(out)
 }#end esg
+
 
 
 ##-------------------------------------------------------------

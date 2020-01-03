@@ -45,11 +45,11 @@ iia = c(2.2, 5, 6.55, 55.05, 60.05)
 iib = c(69.85, 43.1, 36.85, 34.4, 55)
 
 ## ESG I
-esg1 = esg(ia, ib, ic, type = "esg1")
+esg1 = esg("esg1", ia, ib, ic)
 #[1] 30.80 38.80 22.60 15.66 12.66
 
 ## ESG II
-esg2 = esg(iia, iib, 0, type = "esg2")
+esg2 = esg("esg2", iia, iib, 0)
 #[1]  71.61  47.10  42.09  78.44 103.04
 ```
 

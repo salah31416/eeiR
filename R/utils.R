@@ -51,20 +51,19 @@
 ##-------------------------------------------------------------
 ## Generate Sequence Number - gsn
 ##-------------------------------------------------------------
-.gsn = function(RV = TRUE, from = 0, to = 100, by = .5)
+.gsn = function(rv = TRUE, from = 0, to = 100, by = .5)
 {
-	ESC=V=R=z=D3=EEIc=NULL
+	z=NULL
 
 	x = y = seq(from, to, by)
 	sq = expand.grid(x = x, y = y)
 	SEQ = data.table(sq)
 
 
-	if(isTRUE(RV) | is.data.table(RV))
+	if(isTRUE(rv) | is.data.table(rv))
 	{
-		if(isTRUE(RV))
+		if(isTRUE(rv))
 		{
-			RV = data.table(
 			  R = c(
 				"x <= 30 & y > 60",
 				"x <= 30 & (y > 30 & y <= 60)",
@@ -74,14 +73,18 @@
 				"x <= 30 & y <= 30",
 				"x > 60 & (y > 30 & y <= 60)",
 				"(x > 30 & x <= 60) & y <= 30",
-				"x > 60 & y <= 30"),
-			  V = c(2, 4, 4, 6, 6, 6, 8, 8, 10 ),
+				"x > 60 & y <= 30")
+		
+			  V = c(2, 4, 4, 6, 6, 6, 8, 8, 10 )
+
 			  ESC = c("Bad", "Poor", "Poor", "Moderate", "Moderate",
-					  "Moderate", "Good", "Good", "High") )
+					  "Moderate", "Good", "Good", "High") 
+
+			  RV = data.table(R, V, ESC)
 		}#end if
 
 		message("Classification of intervals")
-		cat(paste(ESC, V, R), sep="\n")
+		cat(paste(V, ESC, R), sep="\n")
 
 		for(i in 1:nrow(RV)) {
 			rela = parse(text=RV[i,1])

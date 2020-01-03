@@ -35,11 +35,13 @@ index = function(dta,
 
 	E2 = transpose(E1, keep.names = name.col1, make.names = 1)
 
-	E2[, `:=`(ESGI = esg(eval(ia), eval(ib), eval(ic), "esg1"),
-			  ESGII = esg(eval(iia), eval(iib), eval(iic), "esg2"))
-	][, `:=`(EEIc = eei(ESGI, ESGII, type = "eeic", k), 
-			 EQR = eqr(eei(ESGI, ESGII, type = "eeic", k)))
-	][, `:=`(ESC = esc(EEIc))]
+	E2[, `:=`(ESGI = esg("1", eval(ia), eval(ib), eval(ic))),
+		  by = name.col1]
+	E2[, `:=`(ESGII = esg("2", eval(iia), eval(iib), eval(iic))),
+	      by = name.col1]
+	E2[, `:=`(EEIc = eei(ESGI, ESGII, type = "eeic", k), 
+			 EQR = eqr(eei(ESGI, ESGII, type = "eeic", k)))]
+	E2[, `:=`(ESC = esc(EEIc))]
 
 	c2 = substitute(...)
 
