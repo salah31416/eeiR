@@ -3,7 +3,8 @@
 \alias{group_esg}
 \title{ESG - Ecological Status Group}
 \usage{
-group_esg(dta, NameTaxaDTA = "Taxa", NameTaxaREF = "Taxa", NameGroupESG = "Group", ref = c("gbra", "sgre", "ggre"), genus = TRUE)
+group_esg(dta, NameTaxaDTA = "Taxa", NameTaxaREF = "Taxa", 
+		  NameGroupESG = "Group", ref = c("gbra", "sgre", "ggre"), genus = TRUE)
 }
 \description{
 Using morphological (external morphology, internal anatomy and texture), physiological (surface area/volume ratio, photosynthetic/non-photosynthetic ratio, photosynthetic performance, growth and light adaptation) and life history (longevity and succession) traits along with distributional data across eutrophication gradients, different benthic macrophyte ESG's relevant to nutrient and light responses in transitional waters were determined (Orfanidis et al., 2014)
