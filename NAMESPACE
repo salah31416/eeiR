@@ -1,6 +1,6 @@
 # 
 
-## Indices
+## Export
 export(eei)
 export(esc)
 export(eqr)
@@ -8,5 +8,8 @@ export(esg)
 export(index)
 export(group_esg)
 export(quality_map)
+export(gsn)
+
+## Import
 import(data.table)
 import(leaflet)

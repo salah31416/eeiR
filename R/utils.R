@@ -51,7 +51,7 @@
 ##-------------------------------------------------------------
 ## Generate Sequence Number - gsn
 ##-------------------------------------------------------------
-.gsn = function(rv = TRUE, from = 0, to = 100, by = .5)
+gsn = function(rv = TRUE, from = 0, to = 100, by = .5)
 {
 	z=NULL
 
