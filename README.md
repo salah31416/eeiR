@@ -17,7 +17,6 @@ alt="Classes" width="35%"/>
 * [Ecological Evaluation Index - EEI-c](#ecological-evaluation-index)
 * [Ecological Status Class - ESC](#ecological-status-class)
 * [Ecological Quality Ratio - EQR](#ecological-quality-ratio)
-* [Data ESG](#data-esg)
 * [Graphics](#graphics)
 
 
