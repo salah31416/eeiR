@@ -80,7 +80,7 @@ eeic = eei(esg1, esg2, "eeic")
 
 ## Ecological Quality Ratio
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=EQR=1.25\cdot(eeic/10)-0.25" target="_blank"><img src="https://latex.codecogs.com/gif.latex?EQR=1.25\cdot(eeic/RC)-0.25" title="EQR=1.25\cdot(eeic/RC)-0.25" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=EQR=1.25\cdot(EEIc/10)-0.25" target="_blank"><img src="https://latex.codecogs.com/gif.latex?EQR=1.25\cdot(EEIc/RC)-0.25" title="EQR=1.25\cdot(eeic/RC)-0.25" /></a>
 
 Where: *RC* = 10
 
