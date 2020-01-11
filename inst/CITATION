@@ -8,4 +8,5 @@ bibentry(bibtype = "manual",
            as.person("Sotiris Orfanidis" )),
          year = year,
          note = note,
+		 doi = 10.5281/zenodo.3598145,
 		 url = "https://github.com/salah31416/eeiR")

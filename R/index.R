@@ -33,7 +33,7 @@ index = function(dta,
 
 	if(is.null(name.col1)) name.col1 = "col1"
 
-	E2 = transpose(E1, keep.names = name.col1, make.names = 1)
+	E2 = data.table::transpose(E1, keep.names = name.col1, make.names = 1)
 
 	E2[, `:=`(ESGI = esg("1", eval(ia), eval(ib), eval(ic))),
 		  by = name.col1]
