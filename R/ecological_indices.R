@@ -49,7 +49,7 @@ esg = function(type = c("1", "2"), a = 0, b = 0, c = 0, k = NULL)
 ##-------------------------------------------------------------
 ## Ecological Evaluation Index - EEI
 ##-------------------------------------------------------------
-eei = function(x, y, type = c("eeic", "hyp", "esi"), k = c(a = 0.503, b = 0.954, c = -0.204, d = -0.998, e = 0.355, f = -0.109))
+eei = function(x, y, type = c("eeic", "esi", "hyp"), k = c(a = 0.503, b = 0.954, c = -0.204, d = -0.998, e = 0.355, f = -0.109))
 {
 	k = unname(k)
 
@@ -60,20 +60,20 @@ eei = function(x, y, type = c("eeic", "hyp", "esi"), k = c(a = 0.503, b = 0.954,
 
 	#     a  +   bx   +   cx^2   +   dy   +   ey^2   +   fxy
 	#     |	     |        |          |        |          |
-	h = k[1] + k[2]*x + k[3]*x^2 + k[4]*y + k[5]*y^2 + k[6]*x*y
+	hyp = k[1] + k[2]*x + k[3]*x^2 + k[4]*y + k[5]*y^2 + k[6]*x*y
 
 	switch(type,
 		   "eeic" = {
-			   h[h > 1] <- 1
-			   h = 2 + 8 * h
-			   h[h < 2] <- 2
+			   hyp[hyp > 1] <- 1
+			   hyp = 2 + 8 * hyp
+			   hyp[hyp < 2] <- 2
 		   },
-		   "hyp" = {
-			   h[h > 1] <- 1
-			   h = 2 + 8 * h
+		   "esi" = {
+			   hyp[hyp > 1] <- 1
+			   hyp = 2 + 8 * hyp
 		   },
-		   "esi" = { h }
+		   "hyp" = { hyp }
 	)#end switch
 
-	return(h)
+	return(hyp)
 }#end eei

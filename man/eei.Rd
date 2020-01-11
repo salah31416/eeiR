@@ -3,7 +3,7 @@
 \alias{eei}
 \title{Ecological Evaluation Index}
 \usage{
-eei(x, y, type = c("eeic", "hyp", "esi"), 
+eei(x, y, type = c("eeic", "esi", "hyp"), 
 	k = c(a = 0.503, b = 0.954, c = -0.204, d = -0.998, e = 0.355, f = -0.109))
 }
 \arguments{
