@@ -59,7 +59,7 @@ esg2 = esg("2", iia, iib, 0)
 <img src="https://latex.codecogs.com/svg.latex?x%20=%20\frac{ESGI}{100};%20\quad%20y%20=%20\frac{ESGII}{100}" title="xy" />
 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=EEI=\begin{cases}&space;hyp=a&plus;bx&plus;cx^2&plus;dy&plus;ey^2&plus;fxy&space;\\\\&space;esi=\begin{cases}&space;10&space;&&space;\text{&space;if&space;}&space;hyp>1&space;\\&space;2&plus;8\cdot&space;hyp&&space;\end{cases}&space;\\\\&space;eeic=\begin{cases}&space;2&space;&&space;\text{&space;if&space;}&space;esi<2&space;\\&space;esi&&space;\end{cases}&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?EEI=\begin{cases}&space;hyp=a&plus;bx&plus;cx^2&plus;dy&plus;ey^2&plus;fxy&space;\\\\&space;esi=\begin{cases}&space;10&space;&&space;\text{&space;if&space;}&space;hyp>1&space;\\&space;2&plus;8\cdot&space;hyp&&space;\end{cases}&space;\\\\&space;eeic=\begin{cases}&space;2&space;&&space;\text{&space;if&space;}&space;esi<2&space;\\&space;esi&&space;\end{cases}&space;\end{cases}" title="EEI=\begin{cases} hyp=a+bx+cx^2+dy+ey^2+fxy \\\\ esi=\begin{cases} 10 & \text{ if } hyp>1 \\ 2+8\cdot hyp& \end{cases} \\\\ eeic=\begin{cases} 2 & \text{ if } esi<2 \\ esi& \end{cases} \end{cases}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=EEI=\begin{cases}&space;hyp=a&plus;bx&plus;cx^2&plus;dy&plus;ey^2&plus;fxy&space;\\\\&space;ESI=\begin{cases}&space;10&space;&&space;\text{&space;if&space;}&space;hyp>1&space;\\&space;2&plus;8\cdot&space;hyp&&space;\end{cases}&space;\\\\&space;EEIc=\begin{cases}&space;2&space;&&space;\text{&space;if&space;}&space;ESI<2&space;\\&space;ESI&&space;\end{cases}&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?EEI=\begin{cases}&space;hyp=a&plus;bx&plus;cx^2&plus;dy&plus;ey^2&plus;fxy&space;\\\\&space;ESI=\begin{cases}&space;10&space;&&space;\text{&space;if&space;}&space;hyp>1&space;\\&space;2&plus;8\cdot&space;hyp&&space;\end{cases}&space;\\\\&space;EEIc=\begin{cases}&space;2&space;&&space;\text{&space;if&space;}&space;ESI<2&space;\\&space;ESI&&space;\end{cases}&space;\end{cases}" title="EEI=\begin{cases} hyp=a+bx+cx^2+dy+ey^2+fxy \\\\ ESI=\begin{cases} 10 & \text{ if } hyp>1 \\ 2+8\cdot hyp& \end{cases} \\\\ EEIc=\begin{cases} 2 & \text{ if } ESI<2 \\ ESI& \end{cases} \end{cases}" /></a>
 
 where: *x* is the score in *ESG I*, *y* is the score in *ESG II*
 and *a*, *b*, *c*, *d*, *e* and *f* are the coefficients of the hyperbola.
@@ -69,7 +69,7 @@ and *a*, *b*, *c*, *d*, *e* and *f* are the coefficients of the hyperbola.
 hyp = eei(esg1, esg2, "hyp")
 #[1]  0.22081475  0.43121705  0.34064851  0.06959875 -0.04513925
 
-## esi
+## ESI
 esi = eei(esg1, esg2, "esi")
 #[1] 3.766518 5.449736 4.725188 2.556790 1.638886
 
@@ -80,13 +80,12 @@ eeic = eei(esg1, esg2, "eeic")
 
 ## Ecological Quality Ratio
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=EQR=1.25\cdot(x/10)-0.25" target="_blank"><img src="https://latex.codecogs.com/gif.latex?EQR=1.25\cdot(x/RC)-0.25" title="EQR=1.25\cdot(x/RC)-0.25" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=EQR=1.25\cdot(eeic/10)-0.25" target="_blank"><img src="https://latex.codecogs.com/gif.latex?EQR=1.25\cdot(eeic/RC)-0.25" title="EQR=1.25\cdot(eeic/RC)-0.25" /></a>
 
-Where: *RC* = 10; *x* = *hyp* or *eeic*
-
-The result `eqr(hyp)` is equal to output `eei(esg1, esg2, "esi")`.
+Where: *RC* = 10
 
 ```r
+## EQR
 eqr(esi)
 #[1]  0.22081475  0.43121705  0.34064851  0.06959875 -0.04513925
 
