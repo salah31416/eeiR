@@ -116,15 +116,15 @@ esc(eeic)
 
 # References
 
-> Orfanidis, S., Panayotidis, P., & Stamatis, N. (2003). An insight to the ecological evaluation index (EEI). Ecological Indicators, 3(1), 27–33. doi:10.1016/s1470-160x(03)00008-6
+> Caldeira, A.Q., De Paula, J.C., Reis, R.P., Giordano, R.G., 2017. Structural and functional losses in macroalgal assemblages in a southeastern Brazilian bay over more than a decade. Ecological Indicators 75, 242–248. https://doi.org/10.1016/j.ecolind.2016.12.029
 
-> Orfanidis, S., Pinna, M., Sabetta, L., Stamatis, N., & Nakou, K. (2008). Variation of structural and functional metrics in macrophyte communities within two habitats of eastern Mediterranean coastal lagoons: natural versus human effects. Aquatic Conservation: Marine and Freshwater Ecosystems, 18(S1), S45–S61. doi:10.1002/aqc.957
+> Caldeira, A.Q., Reis, R.P., 2019. Brazilian macroalgae assemblages analyzed using the ecological evaluation index (EEI-c). Ocean & Coastal Management 104927. https://doi.org/10.1016/j.ocecoaman.2019.104927
 
-> Orfanidis, S., Panayotidis, P., & Ugland, K. (2011). Ecological Evaluation Index Continuous Formula (EEI-c) Application: A Step Forward For Functional Groups, The Formula And Reference Condition Values. Mediterranean Marine Science, 12(1), 199. doi:10.12681/mms.60
+> Orfanidis, S., Dencheva, K., Nakou, K., Tsioli, S., Papathanasiou, V., Rosati, I., 2014. Benthic macrophyte metrics as bioindicators of water quality: Towards overcoming typological boundaries and methodological tradition in Mediterranean and Black Seas. Hydrobiologia 740, 61–78. https://doi.org/10.1007/s10750-014-1938-x
 
-> Orfanidis, S., Dencheva, K., Nakou, K., Tsioli, S., Papathanasiou, V., & Rosati, I. (2014). Benthic macrophyte metrics as bioindicators of water quality: towards overcoming typological boundaries and methodological tradition in Mediterranean and Black Seas. Hydrobiologia, 740(1), 61–78. doi:10.1007/s10750-014-1938-x
+> Orfanidis, S., Panayotidis, P., Stamatis, N., 2003. An insight to the ecological evaluation index (EEI). Ecological Indicators 3, 27–33. https://doi.org/10.1016/s1470-160x(03)00008-6
 
-> Caldeira, A. Q., De Paula, J. C., Reis, R. P., & Giordano, R. G. (2017). Structural and functional losses in macroalgal assemblages in a southeastern Brazilian bay over more than a decade. Ecological Indicators, 75, 242–248. https://doi.org/10.1016/j.ecolind.2016.12.029
+> Orfanidis, S., Panayotidis, P., Ugland, K., 2011. Ecological Evaluation Index Continuous Formula (EEI-c) Application: A Step Forward For Functional Groups, The Formula And Reference Condition Values. Mediterranean Marine Science 12, 199. https://doi.org/10.12681/mms.60
 
-> Caldeira, A. Q., & Reis, R. P. (2019). Brazilian macroalgae assemblages analyzed using the ecological evaluation index (EEI-c). Ocean & Coastal Management, 104927. https://doi.org/10.1016/j.ocecoaman.2019.104927
+> Orfanidis, S., Pinna, M., Sabetta, L., Stamatis, N., Nakou, K., 2008. Variation of structural and functional metrics in macrophyte communities within two habitats of eastern Mediterranean coastal lagoons: Natural versus human effects. Aquatic Conservation: Marine and Freshwater Ecosystems 18, S45–S61. https://doi.org/10.1002/aqc.957
  
