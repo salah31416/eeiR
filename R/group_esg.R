@@ -2,8 +2,8 @@
 ##-------------------------------------------------------------
 ##
 ##-------------------------------------------------------------
-group_esg = function(dta,
-					 NameTaxaDTA = "Taxa",
+group_esg = function(data,
+					 NameTaxaDATA = "Taxa",
 					 NameTaxaREF = "Taxa",
 					 NameGroupESG = "Group",
 					 ref = c("gbra", "sgre", "ggre"),
@@ -12,7 +12,7 @@ group_esg = function(dta,
 	ID=ESGg=ESGs=Taxa=NULL
 
 	nameREF = parse(text = NameTaxaREF)
-	nameDTA = parse(text = NameTaxaDTA)
+	nameDATA = parse(text = NameTaxaDATA)
 
 	if(is.data.frame(ref)) {
 		REF = copy(setDT(ref))
@@ -40,25 +40,28 @@ group_esg = function(dta,
 	}#end if
 
 	## copy and convert to data.table
-	DTA = copy(setDT(dta))
-	DTA[, eval(NameTaxaDTA) := .firstup(eval(nameDTA))]
+	DATA = copy(setDT(data))
+	DATA[, eval(NameTaxaDATA) := .firstup(eval(nameDATA))]
 
-	## macroalgae column name of dta
+	## macroalgae column name of data
 	if(genus) {
-		DTA[, ID := iconv(.cut_taxa(eval(nameDTA), n = 1), to='ASCII//TRANSLIT')]
+		DATA[, ID := iconv(.cut_taxa(eval(nameDATA), n = 1), to='ASCII//TRANSLIT')]
 		REF[, ID := iconv(.cut_taxa(eval(nameREF), n = 1), to='ASCII//TRANSLIT')]
 		REF = REF[, list(ID = unique(ID)), by = NameGroupESG]
 	} else {
-		DTA[, ID := iconv(.firstup(paste(.cut_taxa(eval(nameDTA), n = 1),
-								  .cut_taxa(eval(nameDTA)))), to='ASCII//TRANSLIT')]
+		DATA[, ID := iconv(.firstup(paste(.cut_taxa(eval(nameDATA), n = 1),
+								  .cut_taxa(eval(nameDATA)))), to='ASCII//TRANSLIT')]
 		## macroalgae column name of esg reference
 		REF[, ID := iconv(eval(nameREF), to='ASCII//TRANSLIT')]
 		REF = REF[, list(ID = unique(ID)), by = NameGroupESG]
 	}#end if
 
-	## join esg_ref and dta
-	OUT = REF[DTA, on = "ID"]
+	## join esg_ref and data
+	OUT = REF[DATA, on = "ID"]
 	OUT[, ID := NULL]
+
+	OUT[is.na(eval(nameREF))]
 
 	return(OUT[])
 }#end group_esg
+
