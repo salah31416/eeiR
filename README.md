@@ -106,6 +106,9 @@ esc(eeic)
 ## Graphics
 
 <p align="center">
+<img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/model_map.png" alt="Classes" width="50%"/>
+
+<p align="center">
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/classes.png" alt="Classes" width="50%"/>
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/hyp.png" alt="Hyperbole" width="80%"/>
 <img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/k2.png" alt="Hyperbole 3D" width="60%"/>
