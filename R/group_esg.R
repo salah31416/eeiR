@@ -7,7 +7,8 @@ group_esg = function(data,
 					 NameTaxaREF = "Taxa",
 					 NameGroupESG = "Group",
 					 ref = c("gbra", "sgre", "ggre"),
-					 genus = TRUE){
+					 genus = TRUE)
+{
 	ID=ESGg=ESGs=Taxa=NULL
 
 	nameREF = parse(text = NameTaxaREF)
@@ -59,13 +60,9 @@ group_esg = function(data,
 	OUT = REF[DATA, on = "ID"]
 	OUT[, ID := NULL]
 
-#	return(NameGroupESG)
-
 	nameESG = parse(text = NameGroupESG)
 
 	NR = OUT[is.na(eval(nameESG))]
-
-#	return(NR)
 
 	if(nrow(NR)) {
 		print(NR)
