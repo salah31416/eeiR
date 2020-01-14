@@ -7,8 +7,7 @@ group_esg = function(data,
 					 NameTaxaREF = "Taxa",
 					 NameGroupESG = "Group",
 					 ref = c("gbra", "sgre", "ggre"),
-					 genus = TRUE)
-{
+					 genus = TRUE){
 	ID=ESGg=ESGs=Taxa=NULL
 
 	nameREF = parse(text = NameTaxaREF)
@@ -60,7 +59,19 @@ group_esg = function(data,
 	OUT = REF[DATA, on = "ID"]
 	OUT[, ID := NULL]
 
-	OUT[is.na(eval(nameREF))]
+#	return(NameGroupESG)
+
+	nameESG = parse(text = NameGroupESG)
+
+	NR = OUT[is.na(eval(nameESG))]
+
+#	return(NR)
+
+	if(nrow(NR)) {
+		print(NR)
+		stop("\nTaxa name in data does not match reference group Taxa name\nEnter an external ESG group\nExample: ref = esg_group.csv", call. = FALSE)
+		return(NULL)
+	}#end if
 
 	return(OUT[])
 }#end group_esg
