@@ -7,7 +7,7 @@
 alt="Classes" width="35%"/>
 </p>
 
-[![DOI](https://zenodo.org/badge/185321992.svg)](https://zenodo.org/badge/latestdoi/185321992)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3609316.svg)](https://doi.org/10.5281/zenodo.3609316)
 
 
 ## Contents
