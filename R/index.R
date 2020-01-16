@@ -41,7 +41,7 @@ index = function(...,data,
 
 	E1 = DTA[, lapply(.SD, sum), .SDcols = !nc, by = gm] 
 
-	if(is.null(name.col1)) name.col1 = "station"
+	if(is.null(name.col1)) name.col1 = "site"
 
 	EM = melt(E1, id.vars = gm, variable.name=name.col1)
 
