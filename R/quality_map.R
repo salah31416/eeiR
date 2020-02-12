@@ -7,7 +7,7 @@
 		   {
 			   if(esc == "Bad") {
 				   "red"
-			   } else if(esc == "Poor") {
+			   } else if(esc == "Low") {
 				   "purple"
 			   } else if(esc == "Moderate"){
 				   "orange"
@@ -53,7 +53,7 @@ quality_map = function(dta, lng = "lng", lat = "lat", esc = "ESC", idl = "") {
 			label = ~paste(toupper(unique(eval(esc))), "|", unique(eval(idl))), group = "map") %>%
 		addLegend("bottomright",
 			colors =c("#38a9db",  "#72af26", "#ffa748", "#de80ce", "red"),
-			labels= c("High", "Good","Moderate","Poor", "Bad"),
+			labels= c("High", "Good","Moderate","Low", "Bad"),
 			title= "ESC",
 			opacity = .8)
 
