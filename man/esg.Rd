@@ -6,7 +6,7 @@
 esg(type = c("1", "2"), a = 0, b = 0, c = 0, k = NULL)
 }
 \arguments{
-	\item{type}{predefined categories of 1=ESG I and 2=ESG II}
+	\item{type}{predefined categories of 1 = ESG I and 2 = ESG II}
 	\item{a}{value of the ESG}
 	\item{b}{value of the ESG}
 	\item{c}{value of the ESG}

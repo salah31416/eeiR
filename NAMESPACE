@@ -9,6 +9,7 @@ export(index)
 export(group_esg)
 export(quality_map)
 export(gsn)
+export(group_index)
 
 ## Import
 import(data.table)

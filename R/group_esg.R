@@ -1,75 +1,77 @@
 
-##-------------------------------------------------------------
-##
-##-------------------------------------------------------------
-group_esg = function(data,
-					 NameTaxaDATA = "Taxa",
-					 NameTaxaREF = "Taxa",
-					 NameGroupESG = "Group",
-					 ref = c("gbra", "sgre", "ggre"),
-					 genus = TRUE)
+##-------------------------------------------
+## Author  : Izi
+## Project : 
+## Created : dom 24 mai 2020 18:52:50 -03
+## License : MIT
+## Updated :
+##-------------------------------------------
+group_esg = function(data, col_data = "Taxa", ref = NULL, add = NULL)
 {
-	ID=ESGg=ESGs=Taxa=NULL
+	ID=FG=Taxa_FG=NULL
 
-	nameREF = parse(text = NameTaxaREF)
-	nameDATA = parse(text = NameTaxaDATA)
+	nameDATA = parse(text = col_data)
 
-	if(is.data.frame(ref)) {
-		REF = copy(setDT(ref))
-		REF[, eval(NameTaxaREF) := .firstup(eval(nameREF))]
+	if(is.data.frame(ref) & is.null(add))
+	{
+		REF = .ver_add_ref(ref)
+		REF = copy(REF)
+		on = names(REF)
+		setnames(REF, on, c("Taxa_FG", "FG"))
+		REF[, Taxa_FG := .firstup(Taxa_FG)]
+		REF[, Taxa_FG := .cut_taxa(Taxa_FG, 1)]
 	} else {
-		ref = match.arg(ref)
+		REF = readRDS(system.file('esg_ref/FG.rds', package = 'eeiR'))[, list(Taxa_FG, FG)]
+	}#end if
 
-		bra = 'esg_ref/ESG_BRA.rds'
-		gre = 'esg_ref/ESG_GRE.rds'
+	if(!is.null(add))
+	{
+		ADD = .ver_add_ref(add)
+		on = names(ADD)
+		setnames(ADD, on, c("Taxa_FG", "FG"))
+		ADD[, Taxa_FG := .firstup(Taxa_FG)]
+		ADD[, Taxa_FG := .cut_taxa(Taxa_FG, 1)]
+		REF = rbindlist(list(REF, ADD))
+	}#end if
 
-		switch(ref,
-					 "gbra" = {
-			REF = readRDS(system.file(bra, package = 'eeiR'))[,list(Taxa,ESGg)]
-			NameGroupESG = "ESGg" },
-					 "sgre" = {
-			REF = readRDS(system.file(gre, package = 'eeiR'))[,list(Taxa,ESGs)]
-			NameGroupESG = "ESGs"},
-					 "ggre" = {
-			REF = readRDS(system.file(gre, package = 'eeiR'))[,list(Taxa,ESGg)]
-			NameGroupESG = "ESGg"}
-		)#end switch
+	REF = unique(REF, by = c("Taxa_FG", "FG"))
 
-		NameTaxaREF = "Taxa"
-		nameREF = parse(text = NameTaxaREF)
+	tx = REF[duplicated(REF, by = c("Taxa_FG"))][, Taxa_FG]
+
+	if(length(tx))
+	{
+		setkey(REF, Taxa_FG)
+		msg = "duplicated taxa and different funcinal group:\n"
+		dp = REF[tx, paste(Taxa_FG, FG, collapse="\n ")]
+		stop(paste(msg, dp), call. = FALSE)
 	}#end if
 
 	## copy and convert to data.table
 	DATA = copy(setDT(data))
-	DATA[, eval(NameTaxaDATA) := .firstup(eval(nameDATA))]
 
-	## macroalgae column name of data
-	if(genus) {
-		DATA[, ID := iconv(.cut_taxa(eval(nameDATA), n = 1), to='ASCII//TRANSLIT')]
-		REF[, ID := iconv(.cut_taxa(eval(nameREF), n = 1), to='ASCII//TRANSLIT')]
-		REF = REF[, list(ID = unique(ID)), by = NameGroupESG]
-	} else {
-		DATA[, ID := iconv(.firstup(paste(.cut_taxa(eval(nameDATA), n = 1),
-								  .cut_taxa(eval(nameDATA)))), to='ASCII//TRANSLIT')]
-		## macroalgae column name of esg reference
-		REF[, ID := iconv(eval(nameREF), to='ASCII//TRANSLIT')]
-		REF = REF[, list(ID = unique(ID)), by = NameGroupESG]
-	}#end if
+	DATA[, ID := iconv(.cut_taxa(.firstup(eval(nameDATA)), n = 1), to='ASCII//TRANSLIT')]
+	REF[, ID := iconv(.cut_taxa(Taxa_FG, n = 1), to='ASCII//TRANSLIT')]
 
 	## join esg_ref and data
 	OUT = REF[DATA, on = "ID"]
 	OUT[, ID := NULL]
 
-	nameESG = parse(text = NameGroupESG)
+	NR = OUT[is.na(FG)]
 
-	NR = OUT[is.na(eval(nameESG))]
-
-	if(nrow(NR)) {
-		print(NR)
-		stop("\nTaxa name in data does not match reference group Taxa name\nEnter an external ESG group\nExample: ref = esg_group.csv", call. = FALSE)
-		return(NULL)
+	if(nrow(NR))
+	{
+		NRO = NR[, list(Taxa_FG = eval(nameDATA), FG)]
+		setnames(NRO, "Taxa_FG", as.character(nameDATA))
+		nd1 = as.character(nameDATA)
+		nd2 = "name in data does not match functional group default:"
+		msg2 = paste(nd1, nd2, "coerse functional group to <NA>\n")
+		ag = NRO[, paste(unique(eval(nameDATA)), collapse = "\n ")]
+		warning(paste(msg2, ag), call. = FALSE)
 	}#end if
 
+	OUT[, Taxa_FG := NULL]
+
 	return(OUT[])
+
 }#end group_esg
 

@@ -3,10 +3,12 @@
 \alias{gsn}
 \title{Generate Sequence Number}
 \usage{
-gsn(rv = TRUE, from = 0, to = 100, by = .5)
+gsn(rel = NULL, num = NULL, status = NULL, from = 0, to = 100, by = .1)
 }
 \arguments{
-	\item{rv}{data.table or logic use default}
+	\item{rel}{data.frame with logic relaction}
+	\item{num}{status class numeric value}
+	\item{status}{status class catgorical}
 	\item{from}{initial value}
 	\item{to}{final value}
 	\item{by}{interval}

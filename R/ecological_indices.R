@@ -17,6 +17,7 @@ esc = function(x, FUN = NULL)
 {
 	if(is.null(FUN)) {
 		FUN = function(ic) {
+			if(is.na(ic)) return(NA)
 			if(ic <= 2) cl = "Bad"
 			if(ic > 2 & ic <= 4) cl = "Low"
 			if(ic > 4 & ic <= 6) cl = "Moderate"
@@ -43,8 +44,6 @@ esg = function(type = c("1", "2"), a = 0, b = 0, c = 0, k = NULL)
 
 	return(out)
 }#end esg
-
-
 
 ##-------------------------------------------------------------
 ## Ecological Evaluation Index - EEI
