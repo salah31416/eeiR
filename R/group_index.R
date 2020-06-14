@@ -6,7 +6,7 @@
 ## License : MIT
 ## Updated :
 ##-------------------------------------------
-group_index = function(data, id_names = c("Taxa"), col_data = "Taxa", by = NULL, ref = NULL, add = NULL, k = NULL, na.rm = FALSE){
+group_index = function(data, id_names = c("Taxa"), col_data = "Taxa", variable_name = "variable", by = NULL, ref = NULL, add = NULL, k = NULL, na.rm = FALSE){
 
 	DTA = copy(data)
 
@@ -14,7 +14,8 @@ group_index = function(data, id_names = c("Taxa"), col_data = "Taxa", by = NULL,
 
 	GE = group_esg(DTA, col_data, ref, add)
 
-	out = index(GE, id_names = idNames, col_fg = "FG", by, k, na.rm)
+	out = index(GE, id_names=idNames, fg_name = "FG",  variable_name, by, k, na.rm)
 	
 	return(out)
 }#end group_index
+

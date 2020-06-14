@@ -10,16 +10,6 @@ alt="Classes" width="35%"/>
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3609316.svg)](https://doi.org/10.5281/zenodo.3609316)
 
 
-## Contents
-
-* [Installation](#installation)
-* [Ecological Status Group - ESG](#ecological-status-group)
-* [Ecological Evaluation Index - EEI-c](#ecological-evaluation-index)
-* [Ecological Status Class - ESC](#ecological-status-class)
-* [Ecological Quality Ratio - EQR](#ecological-quality-ratio)
-* [Graphics](#graphics)
-
-
 # Installation
 
 ```r
@@ -29,10 +19,6 @@ devtools::install_github("salah31416/eeiR")
 ```
 
 ## Ecological Status Group
-
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;ESG%20I%20(\%%20coverage)%20=%20(IA%20\cdot%201)%20+%20(IB%20\cdot%200.8)%20+%20(IC%20\cdot%200.6)" title="ESGI" />
-
-<img src="https://latex.codecogs.com/svg.latex?ESG%20II%20(\%%20coverage)%20=%20(IIA%20\cdot%200.8)%20+%20(IIB%20\cdot%201)%20+%20(IIC%20\cdot%201)" title=ESG2 />
 
 
 ```r
@@ -56,14 +42,6 @@ esg2 = esg("2", iia, iib, 0)
 
 ## Ecological Evaluation Index
 
-<img src="https://latex.codecogs.com/svg.latex?x%20=%20\frac{ESGI}{100};%20\quad%20y%20=%20\frac{ESGII}{100}" title="xy" />
-
-
-<a href="https://www.codecogs.com/eqnedit.php?latex=EEI=\begin{cases}&space;hyp=a&plus;bx&plus;cx^2&plus;dy&plus;ey^2&plus;fxy&space;\\\\&space;ESI=\begin{cases}&space;10&space;&&space;\text{&space;if&space;}&space;hyp>1&space;\\&space;2&plus;8\cdot&space;hyp&&space;\end{cases}&space;\\\\&space;EEIc=\begin{cases}&space;2&space;&&space;\text{&space;if&space;}&space;ESI<2&space;\\&space;ESI&&space;\end{cases}&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?EEI=\begin{cases}&space;hyp=a&plus;bx&plus;cx^2&plus;dy&plus;ey^2&plus;fxy&space;\\\\&space;ESI=\begin{cases}&space;10&space;&&space;\text{&space;if&space;}&space;hyp>1&space;\\&space;2&plus;8\cdot&space;hyp&&space;\end{cases}&space;\\\\&space;EEIc=\begin{cases}&space;2&space;&&space;\text{&space;if&space;}&space;ESI<2&space;\\&space;ESI&&space;\end{cases}&space;\end{cases}" title="EEI=\begin{cases} hyp=a+bx+cx^2+dy+ey^2+fxy \\\\ ESI=\begin{cases} 10 & \text{ if } hyp>1 \\ 2+8\cdot hyp& \end{cases} \\\\ EEIc=\begin{cases} 2 & \text{ if } ESI<2 \\ ESI& \end{cases} \end{cases}" /></a>
-
-where: *x* is the score in *ESG I*, *y* is the score in *ESG II*
-and *a*, *b*, *c*, *d*, *e* and *f* are the coefficients of the hyperbola.
-
 ```r
 ## hyp
 hyp = eei(esg1, esg2, "hyp")
@@ -80,10 +58,6 @@ eeic = eei(esg1, esg2, "eeic")
 
 ## Ecological Quality Ratio
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=EQR=1.25\cdot(EEIc/10)-0.25" target="_blank"><img src="https://latex.codecogs.com/gif.latex?EQR=1.25\cdot(EEIc/RC)-0.25" title="EQR=1.25\cdot(eeic/RC)-0.25" /></a>
-
-Where: *RC* = 10
-
 ```r
 ## EQR
 eqr(esi)
@@ -95,7 +69,6 @@ eqr(eeic)
 
 ## Ecological Status Class
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=ESC=\begin{cases}&space;Bad&space;&&space;\text{&space;if&space;}&space;eeic\leq2&space;\\&space;Low&space;&&space;\text{&space;if&space;}&space;2<eeic\leq4&space;\\&space;Moderate&space;&&space;\text{&space;if&space;}&space;4<eeic\leq6&space;\\&space;Good&space;&&space;\text{&space;if&space;}&space;6<eeic\leq8&space;\\&space;High&space;&&space;\text{&space;if&space;}&space;eeic>8&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?ESC=\begin{cases}&space;Bad&space;&&space;\text{&space;if&space;}&space;eeic\leq2&space;\\&space;Low&space;&&space;\text{&space;if&space;}&space;2<eeic\leq4&space;\\&space;Moderate&space;&&space;\text{&space;if&space;}&space;4<eeic\leq6&space;\\&space;Good&space;&&space;\text{&space;if&space;}&space;6<eeic\leq8&space;\\&space;High&space;&&space;\text{&space;if&space;}&space;eeic>8&space;\end{cases}" title="ESC=\begin{cases} Bad & \text{ if } eeic\leq2 \\ Low & \text{ if } 2<eeic\leq4 \\ Moderate & \text{ if } 4<eeic\leq6 \\ Good & \text{ if } 6<eeic\leq8 \\ High & \text{ if } eeic>8 \end{cases}" /></a>
 
 ```r
 ## ESC
@@ -103,16 +76,6 @@ esc(eeic)
 #[1] "Low"     "Moderate" "Moderate" "Low"     "Bad"
 ```
 
-## Graphics
-
-<p align="center">
-<img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/model_map.png" alt="Classes" width="50%"/>
-
-<p align="center">
-<img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/classes.png" alt="Classes" width="50%"/>
-<img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/hyp.png" alt="Hyperbole" width="80%"/>
-<img src="https://github.com/salah31416/eeiR/raw/master/inst/figures/k2.png" alt="Hyperbole 3D" width="60%"/>
-</p>
 
 # References
 

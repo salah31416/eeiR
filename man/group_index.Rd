@@ -3,12 +3,13 @@
 \alias{group_index}
 \title{Group ESG and Index}
 \usage{
-group_index(data, id_names = c("Taxa"), col_data = "Taxa", by = NULL, ref = NULL, add = NULL, k = NULL, na.rm = FALSE)
+group_index(data, id_names = c("Taxa"), col_data = "Taxa", variable_name = "variable", by = NULL, ref = NULL, add = NULL, k = NULL, na.rm = FALSE)
 }
 \arguments{
 	\item{data}{data.table or data.frame}
 	\item{id_names}{vector of id variables. Can be integer (corresponding id column numbers) or character (id column names).}
 	\item{col_data}{name of the column containing the names of the taxa}
+	\item{variable_name}{name for the measured variable names column. The default name is "'variable'"}
 	\item{by}{group by}
 	\item{ref}{data.tabel or data.frame with reference data for esg}
 	\item{add}{append functional group default}
